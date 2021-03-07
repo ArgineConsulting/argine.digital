@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import scrollTo from "gatsby-plugin-smoothscroll";
 import logo from "../images/logo.svg";
+import { IconClose } from "./Common/icons";
 
-const NavLinks = [
+const HeaderNavLinks = [
   {
     path: "#services",
     name: "Services",
@@ -25,12 +26,12 @@ const NavLinks = [
   },
 ];
 
-const HeaderNavLink = ({ path, name }) => (
+const NavLink = ({ path, name }) => (
   <button
     onClick={() => {
       scrollTo(path);
     }}
-    className="header__link"
+    className="navbar__link"
   >
     {name}
   </button>
@@ -49,20 +50,39 @@ const Header = () => {
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="container">
-          <div
-            className={`navbar-burger ${navBarActiveClass}`}
-            data-target="navMenu"
+        <div
+          className={`navbar-burger ${navBarActiveClass}`}
+          data-target="navMenu"
+          role="button"
+          tabIndex={0}
+          aria-label="navbar-button"
+          onClick={() => setNavBarActiveClass("is-active")}
+          onKeyPress={() => setNavBarActiveClass("is-active")}
+        >
+          <span />
+          <span />
+          <span />
+        </div>
+        <div id="navMenu" className={`navbar__menu ${navBarActiveClass}`}>
+          {HeaderNavLinks.map(({ path, name }) => (
+            <NavLink
+              key={path}
+              handleClick={() => setNavBarActiveClass("")}
+              path={path}
+              name={name}
+            />
+          ))}
+
+          <span
+            className="navbar__menu__close"
+            aria-label="Close"
             role="button"
             tabIndex={0}
-            aria-label="navbar-button"
-            onClick={() => setNavBarActiveClass("is-active")}
-            onKeyPress={() => setNavBarActiveClass("is-active")}
+            onClick={() => setNavBarActiveClass("")}
+            onKeyPress={() => setNavBarActiveClass("")}
           >
-            {NavLinks.map(({ path, name }) => (
-              <HeaderNavLink key={path} path={path} name={name} />
-            ))}
-          </div>
+            <IconClose />
+          </span>
         </div>
       </nav>
     </header>

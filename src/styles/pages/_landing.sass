@@ -1,21 +1,67 @@
 .introduction
-    background-image: url('/../images/bg.png')
+    background-image: url('../images/bg.png')
     background-size: cover
     background-position: 50% 50%
     background-repeat: no-repeat
     position: relative
-    height: 100vh
-    +mobile
-        height: auto
-        min-height: 720px
     .container
         height: 100%
         display: flex
-        align-items: center
-        justify-content: center
         flex-direction: column
+        min-height: 100vh
+        justify-content: center
         +mobile
-            padding-top: 90px
+            justify-content: flex-end
+            padding-bottom: 93px
+        h1
+            color: $white
+            max-width: 740px
+            +mobile
+                font-size: 42px
+                line-height: 60px
+
+.about
+    .container
+        padding-top: 192px
+        padding-bottom: 126px
+        +mobile
+            padding-top: 128px
+            padding-bottom: 82px
+    &__items
+        width: 100%
+        display: flex
+        justify-content: space-between
+        margin-top: 32px
+        +mobile
+            flex-direction: column
+            margin-top: 83px
+    &__item
+        margin-top: 80px
+        max-width: 340px
+        position: relative
+        padding-left: 40px
+        flex: 1 auto
+        +mobile
+            margin-bottom: 55px
+            margin-top: 0
+        &-count
+            background: -webkit-linear-gradient(#48BBF0, #1B63A6)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            font-weight: bold
+            font-size: 16px
+            line-height: 30px
+            letter-spacing: 0.05em
+            position: absolute
+            top: 4px
+            left: 0
+        &-title
+            font-size: 24px
+            line-height: 36px
+            font-weight: bold
+            letter-spacing: 0.02em
+            text-transform: uppercase
+            margin-bottom: 28px
 
 .our-proccess
     padding-top: 270px
