@@ -1,0 +1,16 @@
+=max($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+=min($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+=hover
+  body.with-hover &:hover
+    @content
+=mobile
+  +max(1100)
+  @content
+
+=hover
+  @media (hover: hover) and (pointer: fine)
+    @content

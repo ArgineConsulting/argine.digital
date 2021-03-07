@@ -1,0 +1,100 @@
+.introduction
+    background-image: url('/../images/bg.png')
+    background-size: cover
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    position: relative
+    height: 100vh
+    +mobile
+        height: auto
+        min-height: 720px
+    .container
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        +mobile
+            padding-top: 90px
+
+.our-proccess
+    padding-top: 270px
+    padding-bottom: 200px
+    background: $black
+    min-height: 1400px
+    box-sizing: border-box
+    overflow: hidden
+    .container
+        position: relative
+    &__bg
+        position: absolute
+        top: 0
+        right: 0
+        opacity: 0.7
+    &__title
+        font-size: 74px
+        color: #fff
+        text-transform: uppercase
+        font-weight: bold
+        position: absolute
+        left: 0
+        top: -80px
+        transform: rotate(-90deg) translate(-50%, -140px)
+        transform-origin: center
+        z-index: 33
+    &__figure
+        position: absolute
+        left: 0
+        right: 0
+        top: -80px
+    &__block
+        position: relative
+        height: 200px
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        max-width: 960px
+        margin-left: auto
+        margin-right: auto
+        &.is-topper
+            max-width: 860px
+        &:after
+            display: block
+            position: absolute
+            background: #4D4D4D
+            height: 1px
+            width: 90px
+            content: ''
+            right: 230px
+            top: 53px
+            transition: .3s
+        &:hover
+            &:after
+                background: #fff
+            .our-proccess__block-list
+                color: #fff
+            .our-proccess__block-list li:after
+                background: #fff
+    &__block-list
+        margin: 0
+        padding: 0
+        font-size: 16px
+        color: #4D4D4D
+        line-height: 30px
+        transition: .3s
+        li
+            position: relative
+            padding-left: 14px
+            &:after
+                display: block
+                width: 4px
+                height: 4px
+                content: ''
+                position: absolute
+                left: 0
+                top: 12px
+                background: #4D4D4D
+                border-radius: 50%
+                transition: .3s
+    &__block-divider
+        height: 100px
