@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "argine",
+    siteUrl: "https://atgine.com.ua/",
+    description: "argine description"
   },
   plugins: [
     "gatsby-plugin-sass",
