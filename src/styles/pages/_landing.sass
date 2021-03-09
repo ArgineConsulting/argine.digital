@@ -144,3 +144,112 @@
                 transition: .3s
     &__block-divider
         height: 100px
+
+.services
+    .container
+        position: relative
+        padding-top: 201px
+        padding-bottom: 288px
+        h2
+            margin-bottom: 64px
+            +mobile
+                margin-bottom: 52px
+        .text
+            max-width: 530px
+            margin-bottom: 18px
+        +mobile
+            padding-top: 133px
+            padding-bottom: 440px
+    .mobile
+        display: none
+        +mobile
+            display: block
+    .desktop
+        display: block
+        +mobile
+            display: none
+    &__left
+        max-width: 668px
+    &__rectangle
+        position: absolute
+        top: 144px
+        right: -200px
+        +mobile
+            background: #FFFFFF
+            z-index: -1
+            opacity: 0.5
+            transform: matrix(-1, 0, 0, 1, 0, 0)
+            right: 0
+            top: auto
+            bottom: 227px
+            // img
+            //     max-width: 259px
+    &__figure
+        position: absolute
+        bottom: 200px
+        right: 26px
+        +mobile
+            right: 76px
+            bottom: 168px
+            img
+                max-width: 240px
+
+.team
+    background: $black
+    .container
+        padding-top: 74px
+        h1
+            text-align: center
+            color: $white
+        .text
+            color: $white
+            margin-bottom: 16px
+    &__members
+        margin-top: 10px
+    &__member
+        position: relative
+        display: flex
+        justify-content: space-between
+        &-photo
+            max-width: 525px
+            position: relative
+        &-social
+            width: 90%
+            position: absolute
+            display: flex
+            justify-content: space-between
+            align-items: center
+            bottom: 135px
+        &-name
+            position: absolute
+            max-width: 300px
+            left: 0
+            bottom: 230px
+            h2
+                font-weight: bold
+                font-size: 48px
+                line-height: 72px
+                text-transform: uppercase
+                color: $white
+        &-descr
+            max-width: 540px
+            margin-top: 126px
+            margin-left: 35px
+        &-count
+            margin-top: 75px
+            span
+                background: -webkit-linear-gradient(#48BBF0, #1B63A6)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                font-weight: bold
+                font-size: 16px
+                line-height: 30px
+                letter-spacing: 0.05em
+                padding-right: 16px
+            p
+                font-weight: bold
+                font-size: 16px
+                line-height: 30px
+                letter-spacing: 0.05em
+                text-transform: uppercase
+                color: $white
