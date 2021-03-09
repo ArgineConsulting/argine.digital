@@ -6,6 +6,7 @@ import AboutSection from "../components/Landing/AboutSection";
 import ProcessSection from "../components/Landing/ProcessSection";
 import ServicesSection from "../components/Landing/ServicesSection";
 import TeamSection from "../components/Landing/TeamSection";
+import ContactSection from "../components/Landing/ContactSection";
 
 const IndexPage = () => {
   return (
@@ -15,6 +16,7 @@ const IndexPage = () => {
       <ProcessSection />
       <TeamSection />
       <ServicesSection />
+      <ContactSection />
     </BaseLayout>
   );
 };
