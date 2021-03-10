@@ -159,7 +159,7 @@
             margin-bottom: 18px
         +mobile
             padding-top: 133px
-            padding-bottom: 440px
+            padding-bottom: 340px
     .mobile
         display: none
         +mobile
@@ -181,7 +181,7 @@
             transform: matrix(-1, 0, 0, 1, 0, 0)
             right: 0
             top: auto
-            bottom: 227px
+            bottom: 127px
             // img
             //     max-width: 259px
     &__figure
@@ -190,7 +190,7 @@
         right: 26px
         +mobile
             right: 76px
-            bottom: 168px
+            bottom: 68px
             img
                 max-width: 240px
 
@@ -307,9 +307,12 @@
                 padding-right: 16px
 
 .contact
-    display: flex
+    overflow: hidden
     .container
-        // max-width: 740px
+        position: relative
+        display: flex
+        justify-content: flex-end
+        padding-bottom: 216px
         h1
             margin-top: 50px
             margin-bottom: 58px
@@ -324,14 +327,53 @@
             text-transform: uppercase
             margin-top: 43px
             margin-bottom: 16px
+        &::after
+            content: ''
+            width: 2000px
+            height: 100%
+            position: absolute
+            background: #000 url('../images/contact-img.svg') right center no-repeat
+            margin: auto
+            transform: translate(50%, 0)
+            right: calc( 50% + 1400px )
+            +mobile
+                max-width: 100%
+                height: 216px
+                transform: translate(0, 0)
+                right: 0
+                left: 0
+                bottom: 0
+        +mobile
+            justify-content: center
+            padding-bottom: 303px
     &__form
         margin-top: 11px
         max-width: 740px
         display: flex
         flex-wrap: wrap
         justify-content: space-between
+        label
+            position: relative
+            max-width: 354px
+            width: 100%
+            margin-bottom: 30px
+            +mobile
+                max-width: 100%
+                margin-bottom: 30px
+            &::after
+                width: 10px
+                height: 8px
+                content: ''
+                position: absolute
+                background: url('../images/select-arrow.svg') no-repeat
+                right: 27px
+                margin: auto
+                top: 0
+                bottom: 0
+                z-index: -1
         select
-            width: 354px
+            max-width: 354px
+            width: 100%
             height: 60px
             border: 1px solid $gray
             box-sizing: border-box
@@ -340,25 +382,37 @@
             line-height: 26px
             letter-spacing: 0.02em
             padding: 0 17px
+            -moz-appearance: none
+            -webkit-appearance: none
+            position: relative
+            z-index: 1
+            cursor: pointer
+            +mobile
+                max-width: 100%
             option
                 font-size: 16px
                 line-height: 26px
                 letter-spacing: 0.02em
         input
-            width: 355px
+            max-width: 355px
+            width: 100%
             height: 60px
             border: 1px solid $gray
             box-sizing: border-box
             padding: 17px
+            margin-bottom: 30px
+            +mobile
+                max-width: 100%
+                margin-bottom: 30px
             &::placeholder
                 font-size: 16px
                 line-height: 26px
                 letter-spacing: 0.02em
                 color: $black
         textarea
-            width: 740px
+            max-width: 740px
+            width: 100%
             height: 120px
-            margin-top: 30px
             padding: 17px
             border: 1px solid $gray
             box-sizing: border-box
@@ -366,22 +420,25 @@
             line-height: 26px
             letter-spacing: 0.02em
             color: $black
+            margin-bottom: 60px
+            +mobile
+                margin-bottom: 48px
             &::placeholder
                 font-size: 16px
                 line-height: 26px
                 letter-spacing: 0.02em
                 color: $black
         button
-            width: 311px
             background: $black
             text-align: center
-            padding: 15px 60px
             text-transform: uppercase
             color: $white
             font-weight: bold
             font-size: 16px
-            line-height: 30px
+            line-height: 60px
             letter-spacing: 0.05em
-            margin-top: 60px
-            img
+            padding: 0 60px
+            border: none
+            svg
                 margin-left: 18px
+                fill: $white
