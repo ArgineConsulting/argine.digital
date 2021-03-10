@@ -204,13 +204,13 @@
         .text
             color: $white
             margin-bottom: 16px
-    &__nav 
+    &__nav
         position: absolute
         right: 0
         bottom: 110px
         display: flex
         z-index: 1
-    &__nav-item 
+    &__nav-item
         padding: 10px
         cursor: pointer
         transition: .3s
@@ -281,10 +281,10 @@
             position: relative
             z-index: 1
             +mobile
-              margin-top: -60px
-              max-width: 100%
-              margin-left: auto
-              margin-right: auto
+                margin-top: -60px
+                max-width: 100%
+                margin-left: auto
+                margin-right: auto
         &-count
             margin-top: 75px
             font-weight: bold
@@ -442,3 +442,110 @@
             svg
                 margin-left: 18px
                 fill: $white
+
+.vacancies
+    .container
+        padding-top: 192px
+        padding-bottom: 294px
+        position: relative
+        padding: 0 -150px
+        color: $white
+        display: flex
+        flex-direction: column
+        justify-content: center
+        h1
+            color: $white
+            margin-bottom: 57px
+        &::after
+            height: 100%
+            background: $black
+            content: ''
+            position: absolute
+            left: -100px
+            right: -100px
+            top: 0
+            bottom: 0
+            z-index: -1
+        button
+            background: $white
+            text-align: center
+            text-transform: uppercase
+            color: $black
+            font-weight: bold
+            font-size: 16px
+            line-height: 60px
+            letter-spacing: 0.05em
+            padding: 0 60px
+            border: none
+            margin-left: auto
+            margin-right: auto
+            svg
+                margin-left: 18px
+                fill: $black
+    &__items
+        margin-bottom: 90px
+    &__item
+        border-bottom: 1px solid #4D4D4D
+        padding-bottom: 10px
+    &__descr
+        display: flex
+        justify-content: space-between
+        padding-left: 36px
+        h5
+            font-weight: bold
+            font-size: 16px
+            line-height: 30px
+            letter-spacing: 0.05em
+            text-transform: uppercase
+            margin-bottom: 16px
+        .text
+            color: $white
+            padding-bottom: 40px
+        &-left
+            flex: 1 auto
+            padding-right: 60px
+        &-right
+            max-width: 340px
+            flex: 1 auto
+    &__title
+        position: relative
+        font-weight: bold
+        font-size: 24px
+        line-height: 36px
+        letter-spacing: 0.02em
+        text-transform: uppercase
+        display: flex
+        align-items: center
+        padding-bottom: 41px
+        span
+            background: -webkit-linear-gradient(#48BBF0, #1B63A6)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            font-weight: bold
+            font-size: 16px
+            line-height: 30px
+            letter-spacing: 0.05em
+            padding-right: 18px
+    &__icon
+        width: 30px
+        height: 30px
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        &::after,
+        &::before
+            content: ''
+            width: 30px
+            height: 2px
+            background: $white
+            display: block
+            transform-origin: 50% 50%
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto
+        &::before
+            transform: rotate(90deg)
