@@ -24,10 +24,42 @@ export const IconArrow = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M24 6.00005V9.33018L30 5.00005L24 0.669922V4.00005H0V6.00005H24Z"
       fill="white"
+    />
+  </svg>
+);
+
+export const ArrRight = () => (
+  <svg
+    width="30"
+    height="10"
+    viewBox="0 0 30 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M24 5.99999V9.33012L30 4.99999L24 0.669861V3.99999H0V5.99999H24Z"
+    />
+  </svg>
+);
+
+export const ArrLeft = () => (
+  <svg
+    width="30"
+    height="10"
+    viewBox="0 0 30 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 6.00005V9.33018L0 5.00005L6 0.669922V4.00005H30V6.00005H6Z"
     />
   </svg>
 );
