@@ -22,7 +22,7 @@ const ServicesSection = () => (
         <p className="text">
           We are dedicated to helping video game development studios improve
           their processes, reduce production times, and improve product quality.
-           At the same time, we’re uniquely able to give you the monetization
+          At the same time, we’re uniquely able to give you the monetization
           data you need with our LoopStats™ technology.
         </p>
       </div>

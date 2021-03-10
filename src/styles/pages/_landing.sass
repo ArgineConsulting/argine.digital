@@ -197,46 +197,105 @@
 .team
     background: $black
     .container
-        padding-top: 74px
+        padding-top: 24px
         h1
             text-align: center
             color: $white
         .text
             color: $white
             margin-bottom: 16px
+    &__nav 
+        position: absolute
+        right: 0
+        bottom: 110px
+        display: flex
+        z-index: 1
+    &__nav-item 
+        padding: 10px
+        cursor: pointer
+        transition: .3s
+        opacity: 0.8
+        &:hover
+            opacity: 1
+        svg
+            fill: #fff
     &__members
         margin-top: 10px
+        position: relative
+        margin-left: -$container-p
+        margin-right: -$container-p
+        width: calc(100% + $container-p*2)
+        +mobile
+            width: calc(100% + 32px)
+            margin-left: -16px
+            margin-right: -16px
     &__member
         position: relative
         display: flex
         justify-content: space-between
+        padding-left: 16px
+        padding-right: 16px
+        +mobile
+            flex-direction: column
         &-photo
             max-width: 525px
+            width: 100%
             position: relative
+            & > img
+                max-width: 100%
+            +mobile
+                margin: 0 auto
+                padding-bottom: 100px
         &-social
             width: 90%
             position: absolute
             display: flex
             justify-content: space-between
             align-items: center
+            flex-wrap: wrap
             bottom: 135px
+            +mobile
+                bottom: 110px
+            img
+                +mobile
+                    max-width: 100px
         &-name
             position: absolute
             max-width: 300px
             left: 0
             bottom: 230px
-            h2
-                font-weight: bold
-                font-size: 48px
-                line-height: 72px
-                text-transform: uppercase
-                color: $white
+            font-weight: bold
+            font-size: 48px
+            line-height: 72px
+            text-transform: uppercase
+            color: $white
+            +mobile
+                font-size: 42px
+                line-height: 60px
+                bottom: 200px
         &-descr
+            width: 100%
             max-width: 540px
             margin-top: 126px
             margin-left: 35px
+            position: relative
+            z-index: 1
+            +mobile
+              margin-top: -60px
+              max-width: 100%
+              margin-left: auto
+              margin-right: auto
         &-count
             margin-top: 75px
+            font-weight: bold
+            font-size: 16px
+            line-height: 30px
+            letter-spacing: 0.05em
+            text-transform: uppercase
+            color: $white
+            +mobile
+                margin-top: 50px
+                margin-bottom: 120px
             span
                 background: -webkit-linear-gradient(#48BBF0, #1B63A6)
                 -webkit-background-clip: text
@@ -246,13 +305,6 @@
                 line-height: 30px
                 letter-spacing: 0.05em
                 padding-right: 16px
-            p
-                font-weight: bold
-                font-size: 16px
-                line-height: 30px
-                letter-spacing: 0.05em
-                text-transform: uppercase
-                color: $white
 
 .contact
     display: flex

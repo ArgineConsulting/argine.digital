@@ -13,7 +13,7 @@ const IndexPage = () => {
     <BaseLayout>
       <IntroductionSection />
       <AboutSection />
-      <ProcessSection />
+      {/* <ProcessSection /> */}
       <TeamSection />
       <ServicesSection />
       <ContactSection />

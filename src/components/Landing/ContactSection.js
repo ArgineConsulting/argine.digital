@@ -15,7 +15,7 @@ const ContactSection = () => (
       <p className="text">I want to talk to your experts in:</p>
       <div className="contact__form">
         <select>
-          <option value="" default selected>
+          <option selected>
             Select an industry
           </option>
         </select>
