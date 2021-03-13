@@ -453,6 +453,9 @@
         display: flex
         flex-direction: column
         justify-content: center
+        +mobile
+            padding-top: 120px
+            padding-bottom: 120px
         h1
             color: $white
             margin-bottom: 57px
@@ -491,6 +494,8 @@
         display: flex
         justify-content: space-between
         padding-left: 36px
+        +mobile
+            flex-direction: column
         h5
             font-weight: bold
             font-size: 16px
@@ -549,3 +554,61 @@
             margin: auto
         &::before
             transform: rotate(90deg)
+
+.about-us
+    .container
+        position: relative
+        padding-top: 192px
+        padding-bottom: 166px
+        h1
+            margin-bottom: 57px
+            +mobile
+                margin-bottom: 52px
+        h5
+            font-weight: bold
+            font-size: 24px
+            line-height: 36px
+            letter-spacing: 0.02em
+            text-transform: uppercase
+            margin-bottom: 40px
+        .text
+            max-width: 530px
+            margin-bottom: 43px
+        +mobile
+            padding-top: 50px
+            padding-bottom: 340px
+    .mobile
+        display: none
+        +mobile
+            display: block
+    .desktop
+        display: block
+        +mobile
+            display: none
+    &__left
+        max-width: 740px
+    &__rectangle
+        position: absolute
+        top: 144px
+        right: -200px
+        background: #FFFFFF
+        opacity: 0.5
+        +mobile
+            background: #FFFFFF
+            z-index: -1
+            opacity: 0.5
+            transform: matrix(-1, 0, 0, 1, 0, 0)
+            right: 0
+            top: auto
+            bottom: 127px
+            // img
+            //     max-width: 259px
+    &__triangle
+        position: absolute
+        bottom: 124px
+        right: -40px
+        +mobile
+            right: 76px
+            bottom: 68px
+            img
+                max-width: 240px

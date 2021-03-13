@@ -9,12 +9,12 @@ const FooterNavLinks = [
     name: "Services",
   },
   {
-    path: "#about-us",
-    name: "About Us",
-  },
-  {
     path: "#customer-stories",
     name: "Customer Stories",
+  },
+  {
+    path: "#about-us",
+    name: "About Us",
   },
   {
     path: "#contact-us",
@@ -43,9 +43,6 @@ const Footer = () => (
         <div className="footer__copy-right">
           © 2016 Argine Consulting. All Rights Reserved.
         </div>
-        <div className="footer__links">
-          <a href="#">Privacy Policy</a> / <a href="#">Terms of Use</a>
-        </div>
       </div>
       <div className="footer__right">
         <div className="footer__nav">
@@ -53,7 +50,10 @@ const Footer = () => (
             <NavLink key={path} path={path} name={name} />
           ))}
         </div>
-        <div className="footer__social">
+        <div className="footer__links">
+          <a href="#">Privacy Policy</a> / <a href="#">Terms of Use</a>
+        </div>
+        {/* <div className="footer__social">
           <ul>
             <li>
               <a href="#">
@@ -71,7 +71,7 @@ const Footer = () => (
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   </footer>

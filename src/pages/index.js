@@ -8,6 +8,7 @@ import ServicesSection from "../components/Landing/ServicesSection";
 import TeamSection from "../components/Landing/TeamSection";
 import ContactSection from "../components/Landing/ContactSection";
 import VacanciesSection from "../components/Landing/VacanciesSection";
+import AboutUsSection from "../components/Landing/AboutUsSection"
 
 const IndexPage = () => {
   return (
@@ -16,7 +17,8 @@ const IndexPage = () => {
       <AboutSection />
       <ProcessSection />
       <TeamSection />
-      <ServicesSection />
+      {/* <ServicesSection /> */}
+      <AboutUsSection />
       <VacanciesSection />
       <ContactSection />
     </BaseLayout>

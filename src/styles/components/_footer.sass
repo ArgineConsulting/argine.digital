@@ -1,12 +1,14 @@
 .footer
     background: $black
     color: $white
-    padding: 55px 0
+    padding: 74px 0
     .container
         display: flex
         justify-content: space-between
+        +mobile
+            flex-direction: column
     &__logo
-        margin-bottom: 30px
+        margin-bottom: 50px
     &__left
         font-size: 14px
         line-height: 24px
@@ -22,17 +24,19 @@
         &__copy-right
             margin-bottom: 15px
     &__right
-        width: 55%
-        display: flex
-        justify-content: space-between
-        +mobile
-            display: none
-    &__nav
+        width: 65%
+        margin-top: 10px
         display: flex
         flex-direction: column
+        a
+            color: $gray
+            padding: 0 4px
+    &__nav
+        display: flex
         align-items: start
-        flex-wrap: wrap
-        height: 100px
+        margin-bottom: 40px
+        +mobile
+            display: none
     &__nav-link
         text-transform: uppercase
         font-size: 16px
@@ -47,7 +51,7 @@
         background: none
         border: none
         padding-bottom: 12px
-        padding-right: 100px
+        padding-right: 48px
     &__social
         ul
             display: flex
