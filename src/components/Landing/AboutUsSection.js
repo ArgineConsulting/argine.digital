@@ -9,11 +9,12 @@ const AboutUsSection = () => (
       <div className="about-us__left">
         <h1>About us</h1>
         <p className="text">
-          We work alongside our clients as a unified team with a shared ambition
-          to redefine industries. Leveraging our tailored data centric process &
-          army of digital innovators, we are able to deliver better, faster &
-          more enduring solutions. Bold innovation requires the courage to
-          change.
+          Argine is a global consultancy that helps innovators & leaders drive
+          meaningful impact on a global level. We work alongside our clients as
+          a unified team with a shared ambition to redefine industries.
+          Leveraging our tailored data centric process & army of digital
+          innovators, we are able to deliver better, faster & more enduring
+          solutions. Bold innovation requires the courage to change.
         </p>
         <h5>
           Argine was founded with the mission of blending the best practices of

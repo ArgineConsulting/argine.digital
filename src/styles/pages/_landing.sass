@@ -63,7 +63,7 @@
             text-transform: uppercase
             margin-bottom: 28px
 
-.our-proccess
+.our-process
     padding-top: 270px
     padding-bottom: 200px
     background: $black
@@ -98,12 +98,31 @@
         height: 200px
         display: flex
         justify-content: flex-end
-        align-items: center
-        max-width: 960px
-        margin-left: auto
-        margin-right: auto
+        margin-left: 45px
         &.is-topper
-            max-width: 860px
+            margin-left: 0
+        &-title
+            position: absolute
+            color: #FFF
+            max-width: 110px
+            right: 810px
+            top: 9px
+            font-weight: bold
+            font-size: 16px
+            line-height: 30px
+            letter-spacing: 0.05em
+            text-transform: uppercase
+            text-align: right
+        &:before
+            display: block
+            position: absolute
+            background: #FFF
+            height: 1px
+            width: 90px
+            content: ''
+            right: 695px
+            top: 35px
+            transition: .3s
         &:after
             display: block
             position: absolute
@@ -111,23 +130,27 @@
             height: 1px
             width: 90px
             content: ''
-            right: 230px
-            top: 53px
+            left: 650px
+            top: 35px
             transition: .3s
         &:hover
-            &:after
+            &-item:after
                 background: #fff
-            .our-proccess__block-list
+            .our-process__block-list
                 color: #fff
-            .our-proccess__block-list li:after
+            .our-process__block-list li:after
                 background: #fff
     &__block-list
+        width: 100%
         margin: 0
         padding: 0
         font-size: 16px
         color: #4D4D4D
         line-height: 30px
         transition: .3s
+        position: absolute
+        top: 20px
+        left: 770px
         li
             position: relative
             padding-left: 14px
