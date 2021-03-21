@@ -51,12 +51,14 @@ export default function ProcessSection() {
           onMouseOver={() => runSegment("first")}
         >
           <div className="our-process__block-title">Research (Capture)</div>
-          <ul className="our-process__block-list">
-            <li>Business deconstruction</li>
-            <li>Identify problems</li>
-            <li>Opportunity Analysis</li>
-            <li>Market Sizing</li>
-          </ul>
+          <div className="our-process__block-list">
+            <ul>
+              <li>Business deconstruction</li>
+              <li>Identify problems</li>
+              <li>Opportunity Analysis</li>
+              <li>Market Sizing</li>
+            </ul>
+          </div>
         </div>
         <div
           className="our-process__block"

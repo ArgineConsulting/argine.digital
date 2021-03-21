@@ -77,31 +77,49 @@
         top: 0
         right: 0
         opacity: 0.7
+        +mobile
+            display: none
     &__title
         font-size: 74px
         color: #fff
         text-transform: uppercase
         font-weight: bold
         position: absolute
-        left: 0
+        left: -100px
         top: -80px
         transform: rotate(-90deg) translate(-50%, -140px)
         transform-origin: center
         z-index: 33
+        +mobile
+            transform: rotate(0deg) translate(0, 0)
+            position: relative
+            left: 0
+            text-align: center
+            top: -180px
+            font-size: 42px
+            line-height: 60px
     &__figure
         position: absolute
         left: 0
         right: 0
         top: -80px
+        +mobile
+            transform: translate(-100px, 0)
     &__block
         position: relative
         height: 200px
         display: flex
         justify-content: flex-end
         margin-left: 45px
+        +mobile
+            margin-left: 0
+            transform: translate(7px, -83px)
         &.is-topper
             margin-left: 0
+            +mobile
+                margin-bottom: 48px
         &-title
+            position: relative
             position: absolute
             color: #FFF
             max-width: 110px
@@ -113,35 +131,37 @@
             letter-spacing: 0.05em
             text-transform: uppercase
             text-align: right
-        &:before
-            display: block
-            position: absolute
-            background: #FFF
-            height: 1px
-            width: 90px
-            content: ''
-            right: 695px
-            top: 35px
-            transition: .3s
-        &:after
-            display: block
-            position: absolute
-            background: #4D4D4D
-            height: 1px
-            width: 90px
-            content: ''
-            left: 650px
-            top: 35px
-            transition: .3s
+            transform: translate(-88px, 0)
+            &:after
+                display: block
+                position: absolute
+                background: #FFF
+                height: 1px
+                width: 90px
+                content: ''
+                left: 140px
+                top: 15px
+                transition: .3s
+                +mobile
+                    width: 39px
+                    left: -50px
+            +mobile
+                top: -33px
+                right: auto
+                text-align: left
         &:hover
             &-item:after
                 background: #fff
             .our-process__block-list
                 color: #fff
-            .our-process__block-list li:after
+            .our-process__block-list li
+                color: #fff
+            .our-process__block-list:after
                 background: #fff
     &__block-list
+        position: relative
         width: 100%
+        max-width: 100%
         margin: 0
         padding: 0
         font-size: 16px
@@ -151,6 +171,23 @@
         position: absolute
         top: 20px
         left: 770px
+        +mobile
+            top: 37px
+            left: auto
+            max-width: 200px
+        &:after
+            display: block
+            position: absolute
+            background: #4D4D4D
+            height: 1px
+            width: 90px
+            content: ''
+            top: 14px
+            left: -120px
+            transition: .3s
+            +mobile
+                width: 24px
+                left: -37px
         li
             position: relative
             padding-left: 14px
@@ -167,6 +204,8 @@
                 transition: .3s
     &__block-divider
         height: 100px
+        +mobile
+            height: 50px
 
 .services
     .container
