@@ -63,7 +63,7 @@
             text-transform: uppercase
             margin-bottom: 28px
 
-.our-proccess
+.our-process
     padding-top: 270px
     padding-bottom: 200px
     background: $black
@@ -77,33 +77,104 @@
         top: 0
         right: 0
         opacity: 0.7
+        +mobile
+            display: none
     &__title
         font-size: 74px
         color: #fff
         text-transform: uppercase
         font-weight: bold
         position: absolute
-        left: 0
+        left: -100px
         top: -80px
         transform: rotate(-90deg) translate(-50%, -140px)
         transform-origin: center
         z-index: 33
+        +mobile
+            transform: rotate(0deg) translate(0, 0)
+            position: relative
+            left: 0
+            text-align: center
+            top: -180px
+            font-size: 42px
+            line-height: 60px
     &__figure
         position: absolute
         left: 0
         right: 0
         top: -80px
+        +mobile
+            transform: translate(-100px, 0)
     &__block
         position: relative
         height: 200px
         display: flex
         justify-content: flex-end
-        align-items: center
-        max-width: 960px
-        margin-left: auto
-        margin-right: auto
+        margin-left: 45px
+        +mobile
+            margin-left: 0
+            transform: translate(7px, -83px)
         &.is-topper
-            max-width: 860px
+            margin-left: 0
+            +mobile
+                margin-bottom: 48px
+        &-title
+            position: relative
+            position: absolute
+            color: #FFF
+            max-width: 110px
+            right: 715px
+            top: 9px
+            font-weight: bold
+            font-size: 16px
+            line-height: 30px
+            letter-spacing: 0.05em
+            text-transform: uppercase
+            text-align: right
+            transform: translate(-88px, 0)
+            &:after
+                display: block
+                position: absolute
+                background: #FFF
+                height: 1px
+                width: 90px
+                content: ''
+                left: 140px
+                top: 15px
+                transition: .3s
+                +mobile
+                    width: 39px
+                    left: -50px
+            +mobile
+                top: -33px
+                right: auto
+                text-align: left
+        &:hover
+            &-item:after
+                background: #fff
+            .our-process__block-list
+                color: #fff
+            .our-process__block-list li
+                color: #fff
+            .our-process__block-list:after
+                background: #fff
+    &__block-list
+        position: relative
+        width: 100%
+        max-width: 100%
+        margin: 0
+        padding: 0
+        font-size: 16px
+        color: #4D4D4D
+        line-height: 30px
+        transition: .3s
+        position: absolute
+        top: 20px
+        left: 770px
+        +mobile
+            top: 37px
+            left: auto
+            max-width: 200px
         &:after
             display: block
             position: absolute
@@ -111,23 +182,12 @@
             height: 1px
             width: 90px
             content: ''
-            right: 230px
-            top: 53px
+            top: 14px
+            left: -120px
             transition: .3s
-        &:hover
-            &:after
-                background: #fff
-            .our-proccess__block-list
-                color: #fff
-            .our-proccess__block-list li:after
-                background: #fff
-    &__block-list
-        margin: 0
-        padding: 0
-        font-size: 16px
-        color: #4D4D4D
-        line-height: 30px
-        transition: .3s
+            +mobile
+                width: 24px
+                left: -37px
         li
             position: relative
             padding-left: 14px
@@ -144,6 +204,8 @@
                 transition: .3s
     &__block-divider
         height: 100px
+        +mobile
+            height: 50px
 
 .services
     .container
@@ -204,13 +266,13 @@
         .text
             color: $white
             margin-bottom: 16px
-    &__nav 
+    &__nav
         position: absolute
         right: 0
         bottom: 110px
         display: flex
         z-index: 1
-    &__nav-item 
+    &__nav-item
         padding: 10px
         cursor: pointer
         transition: .3s
@@ -222,9 +284,9 @@
     &__members
         margin-top: 10px
         position: relative
-        margin-left: -$container-p
-        margin-right: -$container-p
-        width: calc(100% + $container-p*2)
+        margin-left: -20px
+        margin-right: -20px
+        width: calc(100% + 40px)
         +mobile
             width: calc(100% + 32px)
             margin-left: -16px
@@ -281,10 +343,10 @@
             position: relative
             z-index: 1
             +mobile
-              margin-top: -60px
-              max-width: 100%
-              margin-left: auto
-              margin-right: auto
+                margin-top: -60px
+                max-width: 100%
+                margin-left: auto
+                margin-right: auto
         &-count
             margin-top: 75px
             font-weight: bold
@@ -327,6 +389,10 @@
             text-transform: uppercase
             margin-top: 43px
             margin-bottom: 16px
+        img
+            margin-top: 85px
+        // .sent
+        //     display: none
         &::after
             content: ''
             width: 2000px
@@ -442,3 +508,179 @@
             svg
                 margin-left: 18px
                 fill: $white
+
+.vacancies
+    .container
+        padding-top: 192px
+        padding-bottom: 294px
+        position: relative
+        padding: 0 -150px
+        color: $white
+        display: flex
+        flex-direction: column
+        justify-content: center
+        +mobile
+            padding-top: 120px
+            padding-bottom: 120px
+        h1
+            color: $white
+            margin-bottom: 57px
+        &::after
+            height: 100%
+            background: $black
+            content: ''
+            position: absolute
+            left: -100px
+            right: -100px
+            top: 0
+            bottom: 0
+            z-index: -1
+        button
+            background: $white
+            text-align: center
+            text-transform: uppercase
+            color: $black
+            font-weight: bold
+            font-size: 16px
+            line-height: 60px
+            letter-spacing: 0.05em
+            padding: 0 60px
+            border: none
+            margin-left: auto
+            margin-right: auto
+            svg
+                margin-left: 18px
+                fill: $black
+    &__items
+        margin-bottom: 90px
+    &__item
+        border-bottom: 1px solid #4D4D4D
+        padding-bottom: 10px
+        margin-bottom: 50px
+        &:last-child
+            margin-bottom: 0
+    &__descr
+        display: flex
+        justify-content: space-between
+        padding-left: 36px
+        +mobile
+            flex-direction: column
+        h5
+            font-weight: bold
+            font-size: 16px
+            line-height: 30px
+            letter-spacing: 0.05em
+            text-transform: uppercase
+            margin-bottom: 16px
+        .text
+            color: $white
+            padding-bottom: 40px
+        &-left
+            flex: 1 auto
+            padding-right: 60px
+        &-right
+            max-width: 340px
+            flex: 1 auto
+    &__title
+        position: relative
+        font-weight: bold
+        font-size: 24px
+        line-height: 36px
+        letter-spacing: 0.02em
+        text-transform: uppercase
+        display: flex
+        align-items: center
+        padding-bottom: 41px
+        cursor: pointer
+        span
+            background: -webkit-linear-gradient(#48BBF0, #1B63A6)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            font-weight: bold
+            font-size: 16px
+            line-height: 30px
+            letter-spacing: 0.05em
+            padding-right: 18px
+    &__icon
+        width: 30px
+        height: 30px
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        &::after,
+        &::before
+            content: ''
+            width: 30px
+            height: 2px
+            background: $white
+            display: block
+            transform-origin: 50% 50%
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto
+        &::before
+            transform: rotate(90deg)
+        &.is-active::before
+            transform: rotate(0)
+
+.about-us
+    .container
+        position: relative
+        padding-top: 192px
+        padding-bottom: 166px
+        h1
+            margin-bottom: 57px
+            +mobile
+                margin-bottom: 52px
+        h5
+            font-weight: bold
+            font-size: 24px
+            line-height: 36px
+            letter-spacing: 0.02em
+            text-transform: uppercase
+            margin-bottom: 40px
+        .text
+            max-width: 530px
+            margin-bottom: 43px
+        +mobile
+            padding-top: 50px
+            padding-bottom: 340px
+    .mobile
+        display: none
+        +mobile
+            display: block
+    .desktop
+        display: block
+        +mobile
+            display: none
+    &__left
+        max-width: 740px
+    &__rectangle
+        position: absolute
+        top: 144px
+        right: -200px
+        background: #FFFFFF
+        opacity: 0.5
+        +mobile
+            background: #FFFFFF
+            z-index: -1
+            opacity: 0.5
+            transform: matrix(-1, 0, 0, 1, 0, 0)
+            right: 0
+            top: auto
+            bottom: 127px
+            // img
+            //     max-width: 259px
+    &__triangle
+        position: absolute
+        bottom: 124px
+        right: -40px
+        +mobile
+            right: 76px
+            bottom: 68px
+            img
+                max-width: 240px
