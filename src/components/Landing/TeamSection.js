@@ -51,7 +51,7 @@ const userData = [{
 const TeamSection = () => {
   const [swiperInstance, setSwiper] = useState(null);
   return (
-    <section className="team">
+    <section className="team" id="team">
       <div className="container">
         <h1>Our Team</h1>
         <div className="team__members">

@@ -2,7 +2,7 @@ import React from "react";
 import { ArrRight } from "../Common/icons";
 
 const ContactSection = () => (
-  <section className="contact">
+  <section className="contact" id="contact-us">
     <div className="container">
       <div>
         <h1>Contact Us</h1>

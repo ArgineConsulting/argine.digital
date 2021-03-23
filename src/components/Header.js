@@ -29,6 +29,7 @@ const HeaderNavLinks = [
 const NavLink = ({ path, name }) => (
   <button
     onClick={() => {
+      console.log('path', path)
       scrollTo(path);
     }}
     className="navbar__link"

@@ -32,7 +32,7 @@ export default function ProcessSection() {
     }
 
     return (
-        <section className="our-proccess">
+        <section className="our-proccess" id="process">
             <img src={bgImg} className="our-proccess__bg" />
             <div className="container">
                 <h2 className="our-proccess__title">

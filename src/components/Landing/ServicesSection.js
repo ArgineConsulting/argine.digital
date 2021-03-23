@@ -4,7 +4,7 @@ import figure from "../../images/green-figure.svg";
 import rectangleMobile from "../../images/rectangle-mobile.svg";
 
 const ServicesSection = () => (
-  <section className="services">
+  <section className="services" id="about-us">
     <div className="container">
       <div className="services__left">
         <h2>
