@@ -11,7 +11,7 @@ let interactivity = {
   mode: "scroll",
   actions: [
     {
-      visibility: [0, 0.65],
+      visibility: [0, 0.75],
       type: "seek",
       frames: [0, 150],
     },
