@@ -103,8 +103,13 @@
         left: 0
         right: 0
         top: -80px
+        svg
+            max-height: 1080px
         +mobile
-            transform: translate(-100px, 0)
+            transform: translate(-140px, 0)
+            margin: auto
+            svg
+                max-height: 800px
     &__block
         position: relative
         height: 200px
@@ -309,16 +314,17 @@
                 margin: 0 auto
                 padding-bottom: 100px
         &-social
-            width: 90%
             position: absolute
             display: flex
-            justify-content: space-between
+            justify-content: flex-start
             align-items: center
             flex-wrap: wrap
             bottom: 135px
             +mobile
                 bottom: 110px
             img
+                display: block
+                margin-right: 14px
                 +mobile
                     max-width: 100px
         &-name
@@ -410,20 +416,58 @@
         +mobile
             justify-content: center
             padding-bottom: 303px
+    &__form-field
+        flex: 1 auto
+        margin-left: 15px
+        margin-right: 15px
+        margin-bottom: 30px
+        max-width: 50%
+        position: relative
+        z-index: 1
+        +mobile
+            max-width: 100%
+        &.is-textarea
+            width: 100%
+            max-width: 100%
+        .input-border
+            position: absolute
+            left: 0
+            right: 0
+            bottom: 0
+            top: 0
+            z-index: -1
+            &:after
+                position: absolute
+                left: -1px
+                right: -1px
+                top: -1px
+                bottom: -1px
+                transition: .3s
+                background: $gray
+                content: ''
+                display: block
+            &:before
+                position: absolute
+                left: 2px
+                right: 2px
+                top: 2px
+                bottom: 2px
+                background: #fff
+                content: ''
+                display: block
+                z-index: 1
     &__form
         margin-top: 11px
         max-width: 740px
+        margin-left: -15px
+        margin-right: -15px
         display: flex
         flex-wrap: wrap
         justify-content: space-between
         label
             position: relative
-            max-width: 354px
             width: 100%
             margin-bottom: 30px
-            +mobile
-                max-width: 100%
-                margin-bottom: 30px
             &::after
                 width: 10px
                 height: 8px
@@ -436,9 +480,8 @@
                 bottom: 0
                 z-index: -1
         select
-            max-width: 354px
-            width: 100%
             height: 60px
+            width: 100%
             border: 1px solid $gray
             box-sizing: border-box
             background: transparent
@@ -451,47 +494,43 @@
             position: relative
             z-index: 1
             cursor: pointer
-            +mobile
-                max-width: 100%
             option
                 font-size: 16px
                 line-height: 26px
                 letter-spacing: 0.02em
         input
-            max-width: 355px
             width: 100%
             height: 60px
-            border: 1px solid $gray
             box-sizing: border-box
             padding: 17px
-            margin-bottom: 30px
-            +mobile
-                max-width: 100%
-                margin-bottom: 30px
+            border: none
             &::placeholder
                 font-size: 16px
                 line-height: 26px
                 letter-spacing: 0.02em
                 color: $black
+            &:focus + .input-border:after
+                background: linear-gradient(90deg, #48BBF0 0%, #1B63A6 100%)
         textarea
-            max-width: 740px
             width: 100%
             height: 120px
             padding: 17px
-            border: 1px solid $gray
+            margin: 0
             box-sizing: border-box
             font-size: 16px
             line-height: 26px
             letter-spacing: 0.02em
             color: $black
-            margin-bottom: 60px
-            +mobile
-                margin-bottom: 48px
+            resize: none
+            border: none
+            display: block
             &::placeholder
                 font-size: 16px
                 line-height: 26px
                 letter-spacing: 0.02em
                 color: $black
+            &:focus + .input-border:after
+                background: linear-gradient(90deg, #48BBF0 0%, #1B63A6 100%)
         button
             background: $black
             text-align: center
@@ -503,16 +542,19 @@
             letter-spacing: 0.05em
             padding: 0 60px
             border: none
+            margin-left: 15px
             svg
                 margin-left: 18px
                 fill: $white
+                transition: .3s
+            &:hover svg
+                transform: translate(20px, 0px)
 
 .vacancies
     .container
-        padding-top: 192px
-        padding-bottom: 294px
+        padding-top: 152px
+        padding-bottom: 144px
         position: relative
-        padding: 0 -150px
         color: $white
         display: flex
         flex-direction: column
@@ -549,6 +591,9 @@
             svg
                 margin-left: 18px
                 fill: $black
+                transition: .3s
+            &:hover svg
+                transform: translate(20px, 0px)
     &__items
         margin-bottom: 90px
     &__item
@@ -557,10 +602,18 @@
         margin-bottom: 50px
         &:last-child
             margin-bottom: 0
+        +mobile
+            margin-bottom: 30px
     &__descr
         display: flex
         justify-content: space-between
         padding-left: 36px
+        max-height: 0
+        overflow: hidden
+        transition: .3s
+
+        .is-active &
+            max-height: 999px
         +mobile
             flex-direction: column
         h5
@@ -590,6 +643,10 @@
         align-items: center
         padding-bottom: 41px
         cursor: pointer
+        +mobile
+            font-size: 20px
+            padding-bottom: 20px
+
         span
             background: -webkit-linear-gradient(#48BBF0, #1B63A6)
             -webkit-background-clip: text
@@ -615,6 +672,7 @@
             display: block
             transform-origin: 50% 50%
             position: absolute
+            transition: .3s
             left: 0
             right: 0
             top: 0
@@ -622,7 +680,7 @@
             margin: auto
         &::before
             transform: rotate(90deg)
-        &.is-active::before
+        .is-active &::before
             transform: rotate(0)
 
 .about-us
@@ -668,7 +726,7 @@
             z-index: -1
             opacity: 0.5
             transform: matrix(-1, 0, 0, 1, 0, 0)
-            right: 0
+            right: 30px
             top: auto
             bottom: 127px
             // img

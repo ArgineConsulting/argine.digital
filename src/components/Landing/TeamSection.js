@@ -6,6 +6,9 @@ import facebook from "../../images/facebook.svg";
 import amazon from "../../images/amazon.svg";
 import twitch from "../../images/twitch.svg";
 import kabam from "../../images/kabam.svg";
+import canon from "../../images/canon.svg";
+import microsoft from "../../images/microsoft.svg";
+import gigster from "../../images/gigster.svg";
 
 import "swiper/swiper.scss";
 import TeamMember from "../Common/TeamMember";
@@ -41,20 +44,16 @@ const userData = [
     username: "Daniil Demchenko",
     iconList: [
       {
-        alt: "facebook",
-        img: facebook,
+        alt: "gigster",
+        img: gigster,
       },
       {
-        alt: "amazon",
-        img: amazon,
+        alt: "microsoft",
+        img: microsoft,
       },
       {
-        alt: "twitch",
-        img: twitch,
-      },
-      {
-        alt: "kabam",
-        img: kabam,
+        alt: "canon",
+        img: canon,
       },
     ],
     avatar: dan,

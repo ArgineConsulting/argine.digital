@@ -40,10 +40,8 @@ export default function ProcessSection() {
           <Lottie
             lottieRef={figureAnimationController}
             animationData={figureAnimation}
-            style={style}
+            // style={style}
             interactivity={interactivity}
-            onSegmentStart={(e) => console.log(e)}
-            onComplete={(e) => console.log("compleete", e)}
           />
         </div>
         <div

@@ -75,24 +75,22 @@ const VacanciesSection = () => {
 const VacancyTitle = ({ title, number, leftText, rightText }) => {
   const [isOpened, setIsOpened] = useState(false);
   return (
-    <div className="vacancies__item">
+    <div className={`vacancies__item ${isOpened ? "is-active" : ""}`}>
       <div className="vacancies__title" onClick={() => setIsOpened(!isOpened)}>
         <span>{number}</span>
         {title}
-        <div className={`vacancies__icon ${isOpened ? "is-active" : ""}`}></div>
+        <div className="vacancies__icon"></div>
       </div>
-      {isOpened ? (
-        <div className="vacancies__descr">
-          <div className="vacancies__descr-left">
-            <h5>What you’ll do</h5>
-            <p className="text">{leftText}</p>
-          </div>
-          <div className="vacancies__descr-right">
-            <h5>What we offer</h5>
-            <p className="text">{rightText}</p>
-          </div>
+      <div className="vacancies__descr">
+        <div className="vacancies__descr-left">
+          <h5>What you’ll do</h5>
+          <p className="text">{leftText}</p>
         </div>
-      ) : null}
+        <div className="vacancies__descr-right">
+          <h5>What we offer</h5>
+          <p className="text">{rightText}</p>
+        </div>
+      </div>
     </div>
   );
 };
