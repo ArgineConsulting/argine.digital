@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Lottie from "lottie-react";
 import figureAnimation from "../../animation/figureAnimation.json";
 import bgImg from "../../images/process-bg.jpg";
+import { Parallax } from "react-scroll-parallax";
 
 const style = {
   height: 1080,
@@ -33,7 +34,11 @@ export default function ProcessSection() {
 
   return (
     <section className="our-process">
-      <img src={bgImg} className="our-process__bg" />
+      <div className="our-process__bg">
+        <Parallax y={[-20, 0]} tagOuter="figure">
+          <img src={bgImg} />
+        </Parallax>
+      </div>
       <div className="container">
         <h2 className="our-process__title">Our process</h2>
         <div className="our-process__figure">
