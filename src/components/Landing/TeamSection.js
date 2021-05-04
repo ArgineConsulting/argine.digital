@@ -13,6 +13,7 @@ import gigster from "../../images/gigster.svg";
 import "swiper/swiper.scss";
 import TeamMember from "../Common/TeamMember";
 import { ArrLeft, ArrRight } from "../Common/icons";
+import gsap from "gsap";
 
 const userData = [
   {
@@ -65,12 +66,21 @@ const userData = [
 
 const TeamSection = () => {
   const [swiperInstance, setSwiper] = useState(null);
+
+  const onSlideChangeTransitionStartHandler = function (...args) {
+    console.log('onSlideChangeTransitionStartHandler', args)
+    gsap.to('.team__member-name', 0.2, { autoAlpha: 0, y: -40 });
+  }
+  const onSlideChangeTransitionEndHandler = function (...args) {
+    console.log('onSlideChangeTransitionEndHandler', args)
+    gsap.to('.team__member-name', 0.2, { autoAlpha: 1, y: 0 });
+  }
   return (
     <section className="team" id="team">
       <div className="container">
         <h1>Our Team</h1>
         <div className="team__members">
-          <Swiper slidesPerView={1} onSwiper={setSwiper}>
+          <Swiper slidesPerView={1} onSwiper={setSwiper} onSlideChangeTransitionStart={onSlideChangeTransitionStartHandler} onSlideChangeTransitionEnd={onSlideChangeTransitionEndHandler}>
             {userData.map((user, i) => (
               <SwiperSlide key={i}>
                 <TeamMember {...user} idx={i + 1} />
