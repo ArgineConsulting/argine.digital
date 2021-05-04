@@ -70,6 +70,9 @@
     min-height: 1400px
     box-sizing: border-box
     overflow: hidden
+    +mobile
+        min-height: 900px
+        padding-bottom: 50px
     .container
         position: relative
     &__bg
@@ -98,6 +101,8 @@
             top: -180px
             font-size: 42px
             line-height: 60px
+        +smallMobile
+            font-size: 38px
     &__figure
         position: absolute
         left: 0
@@ -110,19 +115,24 @@
             margin: auto
             svg
                 max-height: 800px
+        +smallMobile
+            transform: translate(-90px, 0)
+            svg
+                max-height: 760px
     &__block
         position: relative
-        height: 200px
+        min-height: 200px
         display: flex
         justify-content: flex-end
         margin-left: 45px
         +mobile
             margin-left: 0
             transform: translate(7px, -83px)
+            min-height: 160px
         &.is-topper
             margin-left: 0
-            +mobile
-                margin-bottom: 48px
+            // +mobile
+            //     margin-bottom: 48px
         &-title
             position: relative
             position: absolute
@@ -177,9 +187,24 @@
         top: 20px
         left: 770px
         +mobile
-            top: 37px
-            left: auto
+            top: 0
+            left: 0
+            right: 0
+            margin: auto
+            transform: translate(70px, 0)
             max-width: 200px
+            font-size: 14px
+            line-height: 24px
+            color: #FFF
+        +smallMobile
+            max-width: 160px
+            left: auto
+            transform: translate(0, 0)
+            position: relative
+            margin-left: auto
+            margin-right: 0
+            margin-top: -5px
+            margin-bottom: 20px
         &:after
             display: block
             position: absolute
@@ -211,6 +236,8 @@
         height: 100px
         +mobile
             height: 50px
+        +smallMobile
+            height: 25px
 
 .services
     .container

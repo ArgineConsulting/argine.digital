@@ -53,7 +53,7 @@ export default function ProcessSection() {
           className="our-process__block is-topper"
           onMouseOver={() => runSegment("first")}
         >
-          <div className="our-process__block-title">Research (Capture)</div>
+          {/* <div className="our-process__block-title">Research (Capture)</div> */}
           <div className="our-process__block-list">
             <ul>
               <li>Business deconstruction</li>
@@ -67,7 +67,7 @@ export default function ProcessSection() {
           className="our-process__block"
           onMouseOver={() => runSegment("second")}
         >
-          <div className="our-process__block-title">Explore (Prioritize)</div>
+          {/* <div className="our-process__block-title">Explore (Prioritize)</div> */}
           <ul className="our-process__block-list">
             <li>Acquisition strategy</li>
             <li>Market Segmentation</li>
@@ -80,7 +80,7 @@ export default function ProcessSection() {
           className="our-process__block is-topper"
           onMouseOver={() => runSegment("third")}
         >
-          <div className="our-process__block-title">Develop (Design)</div>
+          {/* <div className="our-process__block-title">Develop (Design)</div> */}
           <ul className="our-process__block-list">
             <li>Extend product portfolio</li>
             <li>Initiate change</li>
@@ -92,7 +92,7 @@ export default function ProcessSection() {
           className="our-process__block"
           onMouseOver={() => runSegment("fourth")}
         >
-          <div className="our-process__block-title">Deliver (Select)</div>
+          {/* <div className="our-process__block-title">Deliver (Select)</div> */}
           <ul className="our-process__block-list">
             <li>Maximize value with the least risk</li>
             <li>World-class talent</li>
