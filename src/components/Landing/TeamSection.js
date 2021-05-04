@@ -67,20 +67,27 @@ const userData = [
 const TeamSection = () => {
   const [swiperInstance, setSwiper] = useState(null);
 
-  const onSlideChangeTransitionStartHandler = function (...args) {
-    console.log('onSlideChangeTransitionStartHandler', args)
-    gsap.to('.team__member-name', 0.2, { autoAlpha: 0, y: -40 });
+  const onChangeSlide = (dir) => {
+    if (dir === 'prev' && swiperInstance.isBeginning) return false;
+    if (dir === 'next' && swiperInstance.isEnd) return false;
+    const descriptionEls = document.querySelectorAll('.team__member-descr .text') || [];
+    const countEls = document.querySelectorAll('.team__member-count') || [];
+    const logoEls = document.querySelectorAll('.team__member-social img') || [];
+    gsap.timeline().staggerTo([...logoEls, ...descriptionEls, ...countEls], 0.15, { autoAlpha: 0, y: -30 }, 0.02, 0).to('.team__member-name', 0.15, { autoAlpha: 0, y: -40, onComplete: () => dir === 'next' ? swiperInstance.slideNext() : swiperInstance.slidePrev() });
   }
+
   const onSlideChangeTransitionEndHandler = function (...args) {
-    console.log('onSlideChangeTransitionEndHandler', args)
-    gsap.to('.team__member-name', 0.2, { autoAlpha: 1, y: 0 });
+    const descriptionEls = this.el.querySelectorAll('.team__member-descr .text') || [];
+    const countEls = document.querySelectorAll('.team__member-count') || [];
+    const logoEls = this.el.querySelectorAll('.team__member-social img') || [];
+    gsap.timeline().to(this.el.querySelector('.swiper-slide-active .team__member-name'), 0.2, { autoAlpha: 1, y: 0 }).staggerTo([...logoEls, ...descriptionEls, ...countEls], 0.25, { autoAlpha: 1, y: 0 }, 0.02);
   }
   return (
     <section className="team" id="team">
       <div className="container">
         <h1>Our Team</h1>
         <div className="team__members">
-          <Swiper slidesPerView={1} onSwiper={setSwiper} onSlideChangeTransitionStart={onSlideChangeTransitionStartHandler} onSlideChangeTransitionEnd={onSlideChangeTransitionEndHandler}>
+          <Swiper slidesPerView={1} effect="fade" speed={300} onSwiper={setSwiper} onSlideChangeTransitionEnd={onSlideChangeTransitionEndHandler}>
             {userData.map((user, i) => (
               <SwiperSlide key={i}>
                 <TeamMember {...user} idx={i + 1} />
@@ -90,13 +97,13 @@ const TeamSection = () => {
           <div className="team__nav">
             <div
               className="team__nav-item"
-              onClick={() => swiperInstance.slidePrev()}
+              onClick={() => onChangeSlide('prev')}
             >
               <ArrLeft />
             </div>
             <div
               className="team__nav-item"
-              onClick={() => swiperInstance.slideNext()}
+              onClick={() => onChangeSlide('next')}
             >
               <ArrRight />
             </div>
