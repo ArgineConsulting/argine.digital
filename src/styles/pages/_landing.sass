@@ -41,12 +41,13 @@
         position: relative
         padding-left: 40px
         flex: 1 auto
-        &:hover .about__animation
-            opacity: 1
-        &:hover .about__item-title
-            color: #FFF
-        &:hover .text
-            color: #FFF
+        +desktop
+            &:hover .about__animation
+                opacity: 1
+            &:hover .about__item-title
+                color: $white
+            &:hover .text
+                color: $white
         +mobile
             margin-bottom: 55px
             margin-top: 0
@@ -77,8 +78,10 @@
         opacity: 0
         transition: opacity .3s
         svg
-            transform: translate3d(-168px, -180px, 0px) !important
-            width: 590px !important
+            transform: translate3d(-160px, -180px, 0px) !important
+            width: 560px !important
+        +mobile
+            display: none
 
 .our-process
     padding-top: 270px
@@ -101,7 +104,7 @@
             display: none
     &__title
         font-size: 74px
-        color: #fff
+        color: $white
         text-transform: uppercase
         font-weight: bold
         position: absolute
@@ -148,12 +151,10 @@
             min-height: 160px
         &.is-topper
             margin-left: 0
-            // +mobile
-            //     margin-bottom: 48px
         &-title
             position: relative
             position: absolute
-            color: #FFF
+            color: $white
             max-width: 110px
             right: 715px
             top: 9px
@@ -167,7 +168,7 @@
             &:after
                 display: block
                 position: absolute
-                background: #FFF
+                background: $white
                 height: 1px
                 width: 90px
                 content: ''
@@ -183,13 +184,13 @@
                 text-align: left
         &:hover
             &-item:after
-                background: #fff
+                background: $white
             .our-process__block-list
-                color: #fff
+                color: $white
             .our-process__block-list li
-                color: #fff
+                color: $white
             .our-process__block-list:after
-                background: #fff
+                background: $white
     &__block-list
         position: relative
         width: 100%
@@ -212,7 +213,7 @@
             max-width: 200px
             font-size: 14px
             line-height: 24px
-            color: #FFF
+            color: $white
         +smallMobile
             max-width: 160px
             left: auto
@@ -286,15 +287,13 @@
         top: 144px
         right: -200px
         +mobile
-            background: #FFFFFF
+            background: $white
             z-index: -1
             opacity: 0.5
             transform: matrix(-1, 0, 0, 1, 0, 0)
             right: 0
             top: auto
             bottom: 127px
-            // img
-            //     max-width: 259px
     &__figure
         position: absolute
         bottom: 200px
@@ -329,7 +328,7 @@
         &:hover
             opacity: 1
         svg
-            fill: #fff
+            fill: $white
     &__members
         margin-top: 10px
         position: relative
@@ -519,7 +518,7 @@
                 right: 2px
                 top: 2px
                 bottom: 2px
-                background: #fff
+                background: $white
                 content: ''
                 display: block
                 z-index: 1
@@ -622,6 +621,8 @@
                 transform: translate(20px, 0px)
 
 .vacancies
+    +desktop
+        margin-bottom: 144px
     .container
         padding-top: 152px
         padding-bottom: 144px
@@ -637,7 +638,9 @@
             color: $white
             margin-bottom: 57px
         &::after
+            max-width: 100vw
             height: 100%
+            margin: auto
             background: $black
             content: ''
             position: absolute
@@ -793,10 +796,10 @@
         position: absolute
         top: 144px
         right: -200px
-        background: #FFFFFF
+        background: $white
         opacity: 0.5
         +mobile
-            background: #FFFFFF
+            background: $white
             z-index: -1
             opacity: 0.5
             transform: matrix(-1, 0, 0, 1, 0, 0)
