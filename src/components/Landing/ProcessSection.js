@@ -9,7 +9,7 @@ let interactivity = {
   mode: "scroll",
   actions: [
     {
-      visibility: [isMobile ? -0.1 : 0.1, 0.75],
+      visibility: isMobile ? [0, 0.5] : [0.1, 0.75],
       type: "seek",
       frames: [0, 150],
     },
