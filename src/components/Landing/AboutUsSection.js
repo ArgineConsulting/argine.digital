@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import Lottie from "lottie-react";
 import rectangle from "../../images/rectangle.svg";
-import triangle from "../../images/triangle.svg";
 import rectangleMobile from "../../images/rectangle-mobile.svg";
 import { Parallax } from "react-scroll-parallax";
 import triangleAnimation from "../../animation/triangleAnimation.json";
@@ -19,12 +18,6 @@ let interactivity = {
 
 const AboutUsSection = () => {
   const triangleAnimationController = useRef({});
-  const segments = {
-    first: [160, 225],
-    second: [224, 295],
-    third: [299, 365],
-    fourth: [370, 441],
-  };
 
   return (
     <section className="about-us">
@@ -68,7 +61,6 @@ const AboutUsSection = () => {
             </Parallax>
           </div>
           <div className="about-us__triangle">
-            {/* <img src={triangle} alt="triangle" /> */}
             <Lottie
               lottieRef={triangleAnimationController}
               animationData={triangleAnimation}
