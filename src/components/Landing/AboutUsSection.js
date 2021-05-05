@@ -4,12 +4,13 @@ import rectangle from "../../images/rectangle.svg";
 import rectangleMobile from "../../images/rectangle-mobile.svg";
 import { Parallax } from "react-scroll-parallax";
 import triangleAnimation from "../../animation/triangleAnimation.json";
+import { isMobile } from 'react-device-detect';
 
 let interactivity = {
   mode: "scroll",
   actions: [
     {
-      visibility: [0, 0.75],
+      visibility: [0, isMobile ? 0.4 : 0.75],
       type: "seek",
       frames: [0, 150],
     },

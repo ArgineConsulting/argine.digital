@@ -3,12 +3,13 @@ import Lottie from "lottie-react";
 import figureAnimation from "../../animation/figureAnimation.json";
 import bgImg from "../../images/process-bg.jpg";
 import { Parallax } from "react-scroll-parallax";
+import { isMobile } from 'react-device-detect';
 
 let interactivity = {
   mode: "scroll",
   actions: [
     {
-      visibility: [0.1, 0.75],
+      visibility: [isMobile ? -0.1 : 0.1, 0.75],
       type: "seek",
       frames: [0, 150],
     },
