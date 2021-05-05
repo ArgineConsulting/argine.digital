@@ -4,15 +4,11 @@ import figureAnimation from "../../animation/figureAnimation.json";
 import bgImg from "../../images/process-bg.jpg";
 import { Parallax } from "react-scroll-parallax";
 
-const style = {
-  height: 1080,
-};
-
 let interactivity = {
   mode: "scroll",
   actions: [
     {
-      visibility: [0, 0.75],
+      visibility: [0.1, 0.75],
       type: "seek",
       frames: [0, 150],
     },
