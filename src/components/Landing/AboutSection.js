@@ -11,11 +11,11 @@ const AboutSection = () => {
         <h1>AMPLIFY YOUR BUSINESS</h1>
         <div className="about__items">
           <div className="about__item">
-            <Lottie
+            {/* <Lottie
               className="about__animation"
               lottieRef={formAnimationController}
               animationData={formAnimation}
-            />
+            /> */}
             <span className="about__item-count">01</span>
             <div className="about__item-title">
               Revenue Focused Business Decisions
@@ -26,11 +26,11 @@ const AboutSection = () => {
             </p>
           </div>
           <div className="about__item">
-            <Lottie
+            {/* <Lottie
               className="about__animation"
               lottieRef={formAnimationController}
               animationData={formAnimation}
-            />
+            /> */}
             <span className="about__item-count">02</span>
             <div className="about__item-title">
               Cutting Edge Software Solutions
@@ -42,11 +42,11 @@ const AboutSection = () => {
             </p>
           </div>
           <div className="about__item">
-            <Lottie
+            {/* <Lottie
               className="about__animation"
               lottieRef={formAnimationController}
               animationData={formAnimation}
-            />
+            /> */}
             <span className="about__item-count">03</span>
             <div className="about__item-title">Data Powered Innovation</div>
             <div className="text">

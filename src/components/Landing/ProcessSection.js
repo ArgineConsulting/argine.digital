@@ -2,8 +2,7 @@ import React, { useRef } from "react";
 import Lottie from "lottie-react";
 import figureAnimation from "../../animation/figureAnimation.json";
 import bgImg from "../../images/process-bg.jpg";
-import { Parallax } from "react-scroll-parallax";
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
 let interactivity = {
   mode: "scroll",
@@ -32,23 +31,23 @@ export default function ProcessSection() {
   return (
     <section className="our-process">
       <div className="our-process__bg">
-        <Parallax y={[-20, 0]} tagOuter="figure">
-          <img src={bgImg} />
-        </Parallax>
+        {/* <Parallax y={[-20, 0]} tagOuter="figure">
+          
+        </Parallax> */}
+        <img src={bgImg} />
       </div>
       <div className="container">
         <h2 className="our-process__title">Our process</h2>
         <div className="our-process__figure">
-          <Lottie
+          {/* <Lottie
             lottieRef={figureAnimationController}
             animationData={figureAnimation}
-            // style={style}
             interactivity={interactivity}
-          />
+          /> */}
         </div>
         <div
           className="our-process__block is-topper"
-          onMouseOver={() => runSegment("first")}
+          // onMouseOver={() => runSegment("first")}
         >
           {/* <div className="our-process__block-title">Research (Capture)</div> */}
           <div className="our-process__block-list">
@@ -62,7 +61,7 @@ export default function ProcessSection() {
         </div>
         <div
           className="our-process__block"
-          onMouseOver={() => runSegment("second")}
+          // onMouseOver={() => runSegment("second")}
         >
           {/* <div className="our-process__block-title">Explore (Prioritize)</div> */}
           <ul className="our-process__block-list">
@@ -75,7 +74,7 @@ export default function ProcessSection() {
         <div className="our-process__block-divider"></div>
         <div
           className="our-process__block is-topper"
-          onMouseOver={() => runSegment("third")}
+          // onMouseOver={() => runSegment("third")}
         >
           {/* <div className="our-process__block-title">Develop (Design)</div> */}
           <ul className="our-process__block-list">
@@ -87,7 +86,7 @@ export default function ProcessSection() {
         </div>
         <div
           className="our-process__block"
-          onMouseOver={() => runSegment("fourth")}
+          // onMouseOver={() => runSegment("fourth")}
         >
           {/* <div className="our-process__block-title">Deliver (Select)</div> */}
           <ul className="our-process__block-list">

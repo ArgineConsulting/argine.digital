@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { ArrRight } from "../Common/icons";
 import messageSent from "../../images/message-sent.svg";
 import { firestoreDB } from "../../utils/firebase";
-import { Parallax } from "react-scroll-parallax";
 import bcg from "../../images/contact-img.svg";
 
 const ContactSection = () => {
@@ -32,9 +31,10 @@ const ContactSection = () => {
     <section className="contact" id="contact-us">
       <div className="container">
         <div className="contact__bcg">
-          <Parallax y={[-40, -10]} tagOuter="figure">
+          {/* <Parallax y={[-40, -10]} tagOuter="figure">
             <img src={bcg} alt="bcg" />
-          </Parallax>
+          </Parallax> */}
+          <img src={bcg} alt="bcg" />
         </div>
         <div>
           <h1>Contact Us</h1>

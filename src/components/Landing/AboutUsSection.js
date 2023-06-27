@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import Lottie from "lottie-react";
 import rectangle from "../../images/rectangle.svg";
 import rectangleMobile from "../../images/rectangle-mobile.svg";
-import { Parallax } from "react-scroll-parallax";
+
 import triangleAnimation from "../../animation/triangleAnimation.json";
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
 let interactivity = {
   mode: "scroll",
@@ -52,21 +52,23 @@ const AboutUsSection = () => {
         </div>
         <div className="about-us__right">
           <div className="about-us__rectangle desktop">
-            <Parallax y={[-20, 10]} tagOuter="figure">
+            {/* <Parallax y={[-20, 10]} tagOuter="figure">
               <img src={rectangle} alt="rectangle" />
-            </Parallax>
+            </Parallax> */}
+            <img src={rectangle} alt="rectangle" />
           </div>
           <div className="about-us__rectangle mobile">
-            <Parallax y={[-20, 10]} tagOuter="figure">
+            {/* <Parallax y={[-20, 10]} tagOuter="figure">
               <img src={rectangleMobile} alt="rectangleMobile" />
-            </Parallax>
+            </Parallax> */}
+            <img src={rectangleMobile} alt="rectangleMobile" />
           </div>
           <div className="about-us__triangle">
-            <Lottie
+            {/* <Lottie
               lottieRef={triangleAnimationController}
               animationData={triangleAnimation}
               interactivity={interactivity}
-            />
+            /> */}
           </div>
         </div>
       </div>
