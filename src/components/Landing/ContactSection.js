@@ -62,7 +62,7 @@ const ContactSection = () => {
                       onChange={(e) => setIndustry(e.target.value)}
                       required
                     >
-                      <option value="Select an industry">
+                      <option selected hidden value="">
                         Select an industry
                       </option>
                       <option value="Grow your revenue">
@@ -80,7 +80,7 @@ const ContactSection = () => {
                       </option>
                       <option value="Create on enhance a Salesforce instance or another ERP software.">
                         Create on enhance a Salesforce instance or another ERP
-                        software.
+                        software
                       </option>
                     </select>
                   </label>

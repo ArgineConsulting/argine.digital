@@ -3,6 +3,11 @@
     background: #000
     max-width: 100%
     overflow: hidden
+    +mobile
+        background-image: url('../images/bg.png')
+        background-size: cover
+        background-position: 25% 0
+        background-repeat: no-repeat
     .container
         height: 100%
         display: flex
@@ -28,6 +33,7 @@
         bottom: 0
         width: 90%
         +mobile
+            display: none
             top: -140px
             min-height: 500px
             min-width: 700px
@@ -785,6 +791,8 @@
             transform: rotate(0)
 
 .about-us
+    width: 100%
+    overflow: hidden
     .container
         position: relative
         padding-top: 192px
