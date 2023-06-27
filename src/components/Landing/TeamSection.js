@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Swiper, SwiperSlide } from "swiper/react";
 import alex from "../../images/alexandr-ronalds.png";
 import dan from "../../images/dan-demchenko.png";
 import facebook from "../../images/facebook.svg";
@@ -59,7 +59,7 @@ const userData = [
     ],
     avatar: dan,
     description:
-      "Daniil Demchenko is the chief product officer & co-founder of Argine Consulting. </br> </br>Daniil has over a decade of experience working with dozens of multinational corporations delicately crafting software that drive user value. Previously, Daniil was on the product team for Gigster, a service based company that acted as the digital arm of some of the worlds largest brands. Some of his projects included “My Om Nom” which was the #1 grossing iOS kids’ app in the USA and a photography marketplace for Canon, the world’s largest camera brand. Most notably however, Daniil worked on the “Microsoft Casual Games Suite” where he contributed to 120% growth in daily active users and worked on the “Microsoft Solitaire Collection” which is the most played computer game of all time. </br> </br>In his spare time, Daniil enjoys helping people improve their general health and wellbeing through online digital classes. Daniil has a masters degree in Criminal Law.",
+      "Daniil Demchenko is the chief product officer & co-founder of Argine Consulting. Daniil has over a decade of experience working with dozens of multinational corporations delicately crafting software that drive user value. </br> </br> Previously, Daniil was on the product team for Gigster, a service based company that acted as the digital arm of some of the worlds largest brands. Some of his projects included “My Om Nom” which was the #1 grossing iOS kids’ app in the USA and a photography marketplace for Canon, the world’s largest camera brand. Most notably however, Daniil worked on the “Microsoft Casual Games Suite” where he contributed to 120% growth in daily active users and worked on the “Microsoft Solitaire Collection” which is the most played computer game of all time. </br> </br>In his spare time, Daniil enjoys helping people improve their general health and wellbeing through online digital classes. Daniil has a masters degree in Criminal Law.",
     title: "CPO",
   },
 ];
@@ -74,10 +74,11 @@ const TeamSection = () => {
       document.querySelectorAll(".team__member-descr .text") || [];
     const countEls = document.querySelectorAll(".team__member-count") || [];
     const logoEls = document.querySelectorAll(".team__member-social img") || [];
+    const readMore = document.querySelectorAll(".read-more-button") || [];
     gsap
       .timeline()
       .staggerTo(
-        [...logoEls, ...descriptionEls, ...countEls],
+        [...logoEls, ...descriptionEls, ...readMore, ...countEls],
         0.15,
         { autoAlpha: 0, y: -30 },
         0.02,
@@ -98,6 +99,7 @@ const TeamSection = () => {
       this.el.querySelectorAll(".team__member-descr .text") || [];
     const countEls = document.querySelectorAll(".team__member-count") || [];
     const logoEls = this.el.querySelectorAll(".team__member-social img") || [];
+    const readMore = document.querySelectorAll(".read-more-button") || [];
     gsap
       .timeline()
       .to(
@@ -106,12 +108,21 @@ const TeamSection = () => {
         { autoAlpha: 1, y: 0 }
       )
       .staggerTo(
-        [...logoEls, ...descriptionEls, ...countEls],
+        [...logoEls, ...descriptionEls, ...readMore, ...countEls],
         0.25,
         { autoAlpha: 1, y: 0 },
         0.02
       );
   };
+
+  const onUpdate = () => {
+    if (!swiperInstance) {
+      return;
+    }
+    console.log("onUpdate", swiperInstance);
+    swiperInstance.updateAutoHeight();
+  };
+
   return (
     <section className="team" id="team">
       <div className="container">
@@ -121,12 +132,16 @@ const TeamSection = () => {
             slidesPerView={1}
             effect="fade"
             speed={300}
+            observer
+            autoHeight
+            observeParents
+            resizeObserver
             onSwiper={setSwiper}
             onSlideChangeTransitionEnd={onSlideChangeTransitionEndHandler}
           >
             {userData.map((user, i) => (
               <SwiperSlide key={i}>
-                <TeamMember {...user} idx={i + 1} />
+                <TeamMember onUpdate={onUpdate} {...user} idx={i + 1} />
               </SwiperSlide>
             ))}
           </Swiper>

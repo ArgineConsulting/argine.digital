@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import planetAnimation from "../../animation/dd.json";
+import planetAnimation from "../../animation/planet.json";
 import Lottie from "lottie-react";
 
 const IntroductionSection = () => {

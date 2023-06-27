@@ -26,10 +26,11 @@ const HeaderNavLinks = [
   },
 ];
 
-const NavLink = ({ path, name }) => (
+const NavLink = ({ path, name, onClick }) => (
   <button
     onClick={() => {
       scrollTo(path);
+      onClick();
     }}
     className="navbar__link"
   >
@@ -67,7 +68,7 @@ const Header = () => {
           {HeaderNavLinks.map(({ path, name }) => (
             <NavLink
               key={path}
-              handleClick={() => setNavBarActiveClass("")}
+              onClick={() => setNavBarActiveClass("")}
               path={path}
               name={name}
             />

@@ -53,6 +53,7 @@
         position: relative
         padding-left: 40px
         flex: 1 auto
+        padding-bottom: 83px
         +desktop
             &:hover .about__animation
                 opacity: 1
@@ -63,6 +64,7 @@
         +mobile
             margin-bottom: 55px
             margin-top: 0
+            padding-bottom: 0px
         &-count
             background: -webkit-linear-gradient(#48BBF0, #1B63A6)
             -webkit-background-clip: text
@@ -409,6 +411,15 @@
                 max-width: 100%
                 margin-left: auto
                 margin-right: auto
+        .read-more-button
+            font-weight: 700
+            color: #fff
+            display: inline-block
+            padding-top: 1px
+            padding-bottom: 1px
+            border-bottom: 1px solid #fff
+            letter-spacing: 0.32px
+
         &-count
             margin-top: 75px
             font-weight: bold
@@ -494,6 +505,7 @@
         +mobile
             justify-content: center
             padding-bottom: 303px
+            padding-top: 60px
     &__form-field
         flex: 1 auto
         margin-left: 15px
@@ -815,7 +827,7 @@
             z-index: -1
             opacity: 0.5
             transform: matrix(-1, 0, 0, 1, 0, 0)
-            right: 30px
+            right: -40px
             top: auto
             bottom: 127px
             // img
