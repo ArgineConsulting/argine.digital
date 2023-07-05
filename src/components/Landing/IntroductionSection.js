@@ -10,11 +10,11 @@ const IntroductionSection = () => {
       <div className="container">
         <h1>Drive Business Impact with Bold Strategic Vision</h1>
       </div>
-      <Lottie
+      {/* <Lottie
         className="introduction__animation"
         lottieRef={planetAnimationController}
         animationData={planetAnimation}
-      />
+      /> */}
     </section>
   );
 };
