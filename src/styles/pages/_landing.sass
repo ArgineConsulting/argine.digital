@@ -8,7 +8,7 @@
     background-position: 25% 0
     background-repeat: no-repeat
     +mobile
-        
+
     .container
         height: 100%
         display: flex
@@ -42,25 +42,32 @@
 .about
     .container
         padding-top: 192px
-        padding-bottom: 126px
         +mobile
             padding-top: 128px
             padding-bottom: 82px
     &__items
         width: 100%
         display: flex
-        justify-content: space-between
+        justify-content: center
         margin-top: 32px
+        padding-bottom: 126px
         +mobile
             flex-direction: column
             margin-top: 83px
+            padding-bottom: 82px
+            padding-left: 16px
+            padding-right: 16px
     &__item
-        margin-top: 80px
-        max-width: 340px
+        max-width: 376px
+        width: 100%
         position: relative
-        padding-left: 40px
-        flex: 1 auto
-        padding-bottom: 83px
+        padding-left: 36px
+        padding-top: 80px
+        padding-bottom: 80px
+        padding-right: 36px
+        margin-left: 5px
+        margin-right: 5px
+
         +desktop
             &:hover .about__animation
                 opacity: 1
@@ -81,8 +88,8 @@
             line-height: 30px
             letter-spacing: 0.05em
             position: absolute
-            top: 4px
-            left: 0
+            top: 82px
+            left: 0px
         &-title
             font-size: 24px
             line-height: 36px
@@ -97,10 +104,27 @@
         z-index: -1
         position: absolute
         opacity: 0
+        top: 0
+        right: 0
         transition: opacity .3s
-        svg
-            transform: translate3d(-160px, -180px, 0px) !important
-            width: 560px !important
+        width: 412px
+
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            z-index: 1
+            background: rgba(#1A1A1A, 0.75)
+        // transform: translate3d(-50%, 0px, 0px)
+        img
+            width: 100%
+            position: relative
+            z-index: 0
+            display: block
         +mobile
             display: none
 
@@ -324,6 +348,106 @@
             bottom: 68px
             img
                 max-width: 240px
+.new-team
+    background: $black
+    padding-bottom: 140px
+    +mobile
+        padding-bottom: 60px
+    .container
+        padding-top: 24px
+        h1
+            text-align: center
+            color: $white
+        .text
+            color: $white
+            margin-bottom: 16px
+    &__members
+        margin-top: 10px
+        position: relative
+        display: flex
+        justify-content: center
+        +mobile
+            flex-direction: column
+            align-items: center
+
+    &__member
+        position: relative
+        max-width: 550px
+        width: 100%
+        margin-left: 25px
+        margin-right: 25px
+        +mobile
+            flex-direction: column
+    &__content
+        padding-left: 25px
+        position: relative
+        z-index: 1
+        top: -80px
+    &-photo
+        width: 100%
+        height: 500px
+        position: relative
+        z-index: 0
+        & > img
+            max-width: 100%
+            margin-left: -6px
+        +mobile
+            margin: 0 auto
+            padding-bottom: 100px
+    &-social
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        flex-wrap: wrap
+        +mobile
+            bottom: 110px
+        img
+            display: block
+            margin-right: 24px
+            max-height: 36px
+            +mobile
+                max-width: 100px
+    &-name
+        font-weight: bold
+        font-size: 42px
+        line-height: 60px
+        margin-bottom: 22px
+        max-width: 400px
+        text-transform: uppercase
+        color: $white
+        +mobile
+            font-size: 34px
+            line-height: 1.3
+    &-descr
+        width: 100%
+        position: relative
+        z-index: 1
+        p
+            display: block
+            padding-bottom: 30px
+            font-size: 16px
+            font-weight: 400
+            line-height: 26px
+            letter-spacing: 0.32px
+
+    &-count
+        font-weight: bold
+        font-size: 24px
+        line-height: 36px
+        letter-spacing: 0.48px
+        text-transform: uppercase
+        background: -webkit-linear-gradient(#48BBF0, #1B63A6)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        transform: rotate(-90deg)
+        position: absolute
+        left: -40px
+        bottom: 20px
+        +mobile
+            bottom: 80px
+            transform-origin: 0 0
+            left: 16px
+            transform: rotate(-90deg)
 
 .team
     background: $black
