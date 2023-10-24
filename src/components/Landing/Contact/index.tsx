@@ -26,7 +26,7 @@ const ContactSection: FC = () => {
     }
 
     try {
-      const response = await axios.post('/api/mail', formData, {
+      const response = await axios.post('/.netlify/functions/mail', formData, {
         headers: { 'Content-Type': 'application/json' },
       })
 
