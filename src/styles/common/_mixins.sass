@@ -7,14 +7,17 @@
 =hover
   body.with-hover &:hover
     @content
-=mobile
-  +max(1100)
-    @content
 =smallMobile
   +max(500)
     @content
+=mobile
+  +max(1100)
+    @content
 =desktop
   +min(1101)
+    @content
+=desktopXL
+  +min(1600)
     @content
 
 =hover

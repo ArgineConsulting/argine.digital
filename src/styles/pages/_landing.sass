@@ -3,7 +3,7 @@
     background: #000
     max-width: 100%
     overflow: hidden
-    background-image: url('../images/bg.png')
+    background-color: black
     background-size: cover
     background-position: 25% 0
     background-repeat: no-repeat
@@ -14,7 +14,8 @@
         display: flex
         flex-direction: column
         min-height: 100vh
-        justify-content: center
+        justify-content: flex-end
+        padding-bottom: 24rem
         position: relative
         z-index: 1
         +mobile
@@ -28,23 +29,20 @@
                 line-height: 60px
     &__animation
         position: absolute
-        left: 50%
-        transform: translateX(-50%)
+        left: 0
         top: 0
         bottom: 0
-        width: 90%
+        width: 100%
+        overflow: hidden
         +mobile
-            display: none
-            top: -140px
-            min-height: 500px
-            min-width: 700px
-
+            left: -175px
+            width: 159%
 .about
     .container
         padding-top: 192px
         +mobile
-            padding-top: 128px
-            padding-bottom: 82px
+            padding-top: 55px
+            padding-bottom: 30px
     &__items
         width: 100%
         display: flex
@@ -53,7 +51,7 @@
         padding-bottom: 126px
         +mobile
             flex-direction: column
-            margin-top: 83px
+            margin-top: 0px
             padding-bottom: 82px
             padding-left: 16px
             padding-right: 16px
@@ -76,9 +74,10 @@
             &:hover .text
                 color: $white
         +mobile
-            margin-bottom: 55px
+            margin-bottom: 10px
             margin-top: 0
             padding-bottom: 0px
+            padding-top: 20px
         &-count
             background: -webkit-linear-gradient(#48BBF0, #1B63A6)
             -webkit-background-clip: text
@@ -90,6 +89,8 @@
             position: absolute
             top: 82px
             left: 0px
+            +mobile
+              top: 22px
         &-title
             font-size: 24px
             line-height: 36px
@@ -97,9 +98,10 @@
             letter-spacing: 0.02em
             text-transform: uppercase
             margin-bottom: 28px
-            transition: color .3s
-        .text
-            transition: color .3s
+            transition: all .3s
+
+            +mobile
+                margin-bottom: 13px
     &__animation
         z-index: -1
         position: absolute
@@ -193,7 +195,7 @@
         +mobile
             margin-left: 0
             transform: translate(7px, -83px)
-            min-height: 160px
+            min-height: 128px
         &.is-topper
             margin-left: 0
         &-title
@@ -202,7 +204,7 @@
             color: $white
             max-width: 110px
             right: 715px
-            top: 9px
+            top: -58px
             font-weight: bold
             font-size: 16px
             line-height: 30px
@@ -223,8 +225,19 @@
                 +mobile
                     width: 39px
                     left: -50px
+            &.isBottom
+              right: 732px
+              top: 943px
+              +mobile
+                right: 4px
+                top: 634px
+            &.isCenter
+              +mobile
+                right: -28px
+                top: -83px
+                
             +mobile
-                top: -33px
+                top: -40px
                 right: auto
                 text-align: left
         &:hover
@@ -256,7 +269,7 @@
             margin: auto
             transform: translate(70px, 0)
             max-width: 200px
-            font-size: 14px
+            font-size: 10px
             line-height: 24px
             color: $white
         +smallMobile
@@ -298,9 +311,9 @@
     &__block-divider
         height: 100px
         +mobile
-            height: 50px
+            height: 122px
         +smallMobile
-            height: 25px
+            height: 125px
 
 .services
     .container
@@ -395,18 +408,23 @@
             margin: 0 auto
             padding-bottom: 100px
     &-social
-        display: flex
-        justify-content: flex-start
-        align-items: center
-        flex-wrap: wrap
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 22px
+        max-width: 400px
+        align-items: start
         +mobile
-            bottom: 110px
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 23px
+            max-width: 53vw
+            align-items: center
         img
             display: block
-            margin-right: 24px
             max-height: 36px
+            max-width: 100px
             +mobile
-                max-width: 100px
+                max-width: 97px
     &-name
         font-weight: bold
         font-size: 42px
@@ -574,6 +592,10 @@
 
 .contact
     overflow: hidden
+    &__form-email
+        border: 1px solid #b3b3b3
+    &__form-textarea
+        border: 1px solid #b3b3b3
     &__bcg
         content: ''
         width: 2000px
@@ -589,6 +611,21 @@
             display: block
             +mobile
                 max-width: 100%
+        &-img        
+          width: '100%',
+          background-size: contain,
+          background-repeat: no-repeat
+          height: 100rem
+          background-color: black
+          +mobile
+             background-position: 11rem -1rem
+             height: 100rem
+          +desktop
+             background-position: 101rem -1rem
+             height: 60rem
+          +desktopXL
+             background-position: 92rem -1rem
+             height: 60rem
         +mobile
             max-width: 100%
             height: 216px
@@ -617,6 +654,8 @@
             margin-bottom: 16px
         img
             margin-top: 85px
+            width: 100%
+            height: 78%
         // &::after
         //     content: ''
         //     width: 2000px
@@ -725,7 +764,6 @@
             height: 60px
             box-sizing: border-box
             padding: 17px
-            border: none
             font-family: 'Red Hat Display'
             &::placeholder
                 font-size: 16px
@@ -746,7 +784,6 @@
             letter-spacing: 0.02em
             color: $black
             resize: none
-            border: none
             display: block
             &::placeholder
                 font-size: 16px
@@ -807,7 +844,7 @@
             +mobile
                 left: 0
                 right: 0
-        button
+        &__button
             background: $white
             text-align: center
             text-transform: uppercase
@@ -828,6 +865,9 @@
                 transform: translate(20px, 0px)
     &__items
         margin-bottom: 90px
+        +mobile
+            margin-bottom: 50px
+          
     &__item
         border-bottom: 1px solid #4D4D4D
         padding-bottom: 10px
@@ -839,15 +879,18 @@
     &__descr
         display: flex
         justify-content: space-between
-        padding-left: 36px
+        flex-direction: column
+        margin-left: 36px
         max-height: 0
         overflow: hidden
         transition: .3s
 
         .is-active &
-            max-height: 999px
+            max-height: 5000px
+            overflow: visible
         +mobile
             flex-direction: column
+            margin-left: 42px
         h5
             font-weight: bold
             font-size: 16px
@@ -858,12 +901,100 @@
         .text
             color: $white
             padding-bottom: 40px
+        .hidden
+            color: #1a1a1a
+            +mobile
+                display: none
+        ul
+            list-style-type: disc
+            font-size: 16px
+            letter-spacing: .02em
+            line-height: 26px
+        li
+            margin-bottom: 10px
+        &__title
+            color: $white
+            font-size: 16px
+            +mobile
+                margin-bottom: 30px
+        &__subtitle
+            color: $white
+            font-size: 16px
+            margin-bottom: 30px
+            &-position
+                margin-bottom: 30px
+                +mobile
+                    margin-top: 20px
+                    margin-bottom: 30px
+            &-location
+                margin-bottom: 70px
+                +mobile
+                    margin-bottom: 30px
+        &-top
+          display: flex
+          flex-direction: row
+          +mobile
+              flex-direction: column-reverse
+        &-middle
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            gap: 96px
+            margin-bottom: 41px
+            +mobile
+                flex-direction: column
+                gap: 0px
+        &-bottom
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            gap: 96px
+            +mobile
+                flex-direction: column
+                gap: 0px
+
         &-left
             flex: 1 auto
             padding-right: 60px
+            &-top
+                width: 50%
+                +mobile
+                    width: 100%
+            &-middle
+                width: 50%
+                +mobile
+                    width: 100%
+            &-bottom
+                width: 50%
+                +mobile
+                    width: 100%
         &-right
-            max-width: 340px
             flex: 1 auto
+            max-width: 340px
+            &-top
+                width: 50%
+                +mobile
+                    width: 100%
+            &-middle
+                width: 50%
+                +mobile
+                    width: 100%
+            &-bottom
+                width: 50%
+                +mobile
+                    width: 100%
+            span
+                font-weight: bold
+            .inquireEmail
+                border: 1px solid white
+                padding-block: 25px
+                padding-inline: 25px
+                +mobile
+                    margin-bottom: 30px
+                    padding-inline: 24px
+                    font-size: 15px
+                    overflow: visible
+                    transform: translateX(-20px)
     &__title
         position: relative
         font-weight: bold
@@ -952,17 +1083,17 @@
     &__rectangle
         position: absolute
         top: 144px
-        right: -200px
+        right: -300px
         background: $white
         opacity: 0.5
         +mobile
             background: $white
             z-index: -1
-            opacity: 0.5
+            opacity: 0.3
             transform: matrix(-1, 0, 0, 1, 0, 0)
-            right: -40px
+            right: -89px
             top: auto
-            bottom: 127px
+            bottom: 331px
             // img
             //     max-width: 259px
     &__triangle
@@ -971,6 +1102,7 @@
         right: -40px
         +mobile
             right: 76px
-            bottom: 68px
+            bottom: 119px
+            width: 230px
             img
                 max-width: 240px
