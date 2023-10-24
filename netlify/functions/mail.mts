@@ -1,13 +1,12 @@
-import { VercelRequest, VercelResponse } from '@vercel/node'
 import { createTransport } from 'nodemailer'
 
-export default async function sendEmail(req: VercelRequest, res: VercelResponse) {
+export default async function sendEmail(req) {
   // Const
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = Netlify.env.get
 
   // Check .env vars
   if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
-    return res.status(500).json({ message: 'SMTP configuration missing in environment variables.' })
+    return new Response('SMTP configuration missing in environment variables.')
   }
 
   // Check req method
@@ -35,11 +34,11 @@ export default async function sendEmail(req: VercelRequest, res: VercelResponse)
       // Try send mail
       await transporter.sendMail(MAIL_CONFIG)
 
-      return res.status(200).json({ message: 'Email sent successfully' })
+      return new Response('Email sent successfully')
     } catch (error: any) {
-      return res.status(500).json({ message: 'Error sending email', error: error.message })
+      return new Response('Error sending email')
     }
   } else {
-    return res.status(405).json({ message: 'Method Not POST' })
+    return new Response('Method Not POST')
   }
 }
