@@ -9,7 +9,7 @@
     "argine"
   ],
   "scripts": {
-    "dev": "gatsby develop -H 0.0.0.0",
+    "develop": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
