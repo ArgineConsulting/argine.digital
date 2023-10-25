@@ -10,7 +10,6 @@ const VacancyTitle: FC<PropsVacancyTitle> = ({ item }) => {
   const {
     title,
     number,
-    intro,
     position,
     location,
     jobBrief,
@@ -33,7 +32,7 @@ const VacancyTitle: FC<PropsVacancyTitle> = ({ item }) => {
           <div className="vacancies__descr-left">
             <p className="text">
               {htmlParser(
-                'At Workers Benefit Fund we are always looking for experienced and innovative team members that are excited about leveling the playing field for everyone in the new gig economy workforce. Our goal is to give access & provide benefits to these new 100 million strong non-traditional workers who don’t have access to corporate benefit plans or traditional benefits. We are passionate about building tools & services to re-envision what is possible for gig workers.',
+                "Join the Argine Digital team and unleash your potential in a high-impact, remote-first environment! We're not just developers; we're innovators in AI, VR/AR/MR, and masterminds in product management. Be a part of groundbreaking projects that redefine businesses and propel them to new heights. Your creativity won't just be welcomed—it'll be celebrated!",
               )}
             </p>
             <h2 className="vacancies__descr__title">JOB BRIEF</h2>
