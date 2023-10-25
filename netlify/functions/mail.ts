@@ -4,7 +4,6 @@ export default async function handler(req: Request) {
   try {
     // Retrieve SMTP configuration from environment variables
     const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env
-    console.log(req.text)
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
       throw new Error('SMTP configuration missing in environment variables.')
