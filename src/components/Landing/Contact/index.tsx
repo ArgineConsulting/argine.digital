@@ -74,7 +74,7 @@ const ContactSection: FC = () => {
             </>
           ) : (
             <div className="send">
-              <p className="text">What are your business goals?</p>
+              <h5 className="text">What are your business goals?</h5>
               <form className="contact__form" onSubmit={(e: any) => submitHandler(e)}>
                 <div className="contact__form-field">
                   <label htmlFor="value">
