@@ -74,7 +74,6 @@ const ContactSection: FC = () => {
             </>
           ) : (
             <div className="send">
-              <h5>Ready to talk?</h5>
               <p className="text">What are your business goals?</p>
               <form className="contact__form" onSubmit={(e: any) => submitHandler(e)}>
                 <div className="contact__form-field">
@@ -84,20 +83,25 @@ const ContactSection: FC = () => {
                       name="value"
                       value={goal}
                       onChange={e => setGoal(e.target.value)}
-                      required
                     >
-                      <option value="Grow your revenue" hidden>
-                        Select a Goal
+                      <option value="Choose Your Objective" hidden>
+                        Choose Your Objective
                       </option>
-                      <option value="Grow your revenue">Grow your revenue</option>
-                      <option value="Improve your strategic direction">
-                        Improve your strategic direction
+
+                      <option value="Boost Revenue">Boost Revenue</option>
+
+                      <option value="Improve Strategic Direction">
+                        Improve Strategic Direction
                       </option>
-                      <option value="Co-develop custom software">Co-develop custom software</option>
-                      <option value="Increase LTV">Increase LTV</option>
-                      <option value="Create or enhance a call center">
-                        Create or enhance a call center
+
+                      <option value="Perform User Research">Perform User Research</option>
+
+                      <option value="Co-develop Custom Software">Co-develop Custom Software</option>
+
+                      <option value="Develop or Improve CRM System">
+                        Develop or Improve CRM System
                       </option>
+
                       <option value="Create on enhance a Salesforce instance or another ERP software.">
                         Create on enhance a Salesforce instance or another ERP software
                       </option>
