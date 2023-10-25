@@ -8,13 +8,13 @@ import axios from 'axios'
 const ContactSection: FC = () => {
   // Local state
   const [isSent, setIsSent] = useState<boolean>(false)
-  const [industry, setIndustry] = useState<string>('Select an industry')
+  const [goal, setGoal] = useState<string>('Select an industry')
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
 
   const submitHandler = async (event: SyntheticEvent) => {
     event.preventDefault()
-    const SELECTOR_VALUE = industry
+    const SELECTOR_VALUE = goal
     const MAIL_VALUE = email
     const MESSAGE_VALUE = message
 
@@ -26,7 +26,7 @@ const ContactSection: FC = () => {
     }
 
     try {
-      const response = await axios.post('/.netlify/functions/mail', formData, {
+      const response = await axios.post('/api/mail', formData, {
         headers: { 'Content-Type': 'application/json' },
       })
 
@@ -75,19 +75,19 @@ const ContactSection: FC = () => {
           ) : (
             <div className="send">
               <h5>Ready to talk?</h5>
-              <p className="text">What can we help you achieve?</p>
+              <p className="text">What are your business goals?</p>
               <form className="contact__form" onSubmit={(e: any) => submitHandler(e)}>
                 <div className="contact__form-field">
                   <label htmlFor="value">
                     <select
                       id="value"
                       name="value"
-                      value={industry}
-                      onChange={e => setIndustry(e.target.value)}
+                      value={goal}
+                      onChange={e => setGoal(e.target.value)}
                       required
                     >
                       <option value="Grow your revenue" hidden>
-                        Select an industry
+                        Select a Goal
                       </option>
                       <option value="Grow your revenue">Grow your revenue</option>
                       <option value="Improve your strategic direction">

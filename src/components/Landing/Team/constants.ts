@@ -36,7 +36,7 @@ export const NEWS_TEAM_TEXT_MEDIA = [
     title: 'CEO',
   },
   {
-    username: 'Daniil Demchenko',
+    username: 'Dan Demchenko',
     iconList: [
       {
         alt: 'gigster',
@@ -53,7 +53,7 @@ export const NEWS_TEAM_TEXT_MEDIA = [
     ],
     avatar: danAvatar,
     description:
-      'Daniil Demchenko is the chief product officer & co-founder of Argine Consulting. Daniil has over a decade of experience working with dozens of multinational corporations delicately crafting software that drive user value.',
+      'Dan Demchenko is the chief product officer & co-founder of Argine Consulting. Dan has over a decade of experience working with dozens of multinational corporations delicately crafting software that drive user value.',
     title: 'CPO',
   },
 ]

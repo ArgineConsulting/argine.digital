@@ -1,7 +1,7 @@
 import React from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import logo from '../images/logo.svg'
-import { IconArrow } from './Common/icons'
+// import { IconArrow } from './Common/icons'
 
 const FooterNavLinks = [
   {
@@ -49,7 +49,7 @@ const Footer = () => (
           ))}
         </div>
         <div className="footer__links">
-          <a href="#">Privacy Policy</a> / <a href="#">Terms of Use</a>
+          <a href="/privacy-policy">Privacy Policy</a> / <a href="/tos">Terms of Use</a>
         </div>
         {/* <div className="footer__social">
           <ul>

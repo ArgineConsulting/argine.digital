@@ -23,7 +23,7 @@ const TeamSection: FC = () => (
                     __html: user.description,
                   }}
                 ></p>
-                {user.username === 'Daniil Demchenko' ? (
+                {user.username === 'Dan Demchenko' ? (
                   <div className="new-team-social">
                     {user.iconList.map((item, key) => (
                       <img key={key} src={item.img} alt={item.alt} />
