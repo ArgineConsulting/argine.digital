@@ -1,8 +1,8 @@
 import { createTransport } from 'nodemailer'
 
-export default async function sendEmail(req) {
+export default async function handler(req: Request) {
   // Const
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = Netlify.env.get
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env
   console.log(SMTP_HOST, SMTP_USER, SMTP_PASSWORD)
   console.log(req.body)
   console.log(req.method)
@@ -27,10 +27,10 @@ export default async function sendEmail(req) {
 
     // Access the parsed form data
     const MAIL_CONFIG = {
-      from: req.body.email,
+      from: req.body?.email,
       to: SMTP_USER,
-      subject: req.body.subject,
-      text: req.body.message,
+      subject: req.body?.subject,
+      text: req.body?.message,
     }
 
     try {
