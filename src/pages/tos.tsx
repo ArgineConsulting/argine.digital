@@ -19,7 +19,6 @@ const TermsOfUse: FC = () => {
           <strong>Address:</strong> 4617 Norris Ave, Sacramento, Postal code 95841, United States
         </p>
 
-        <br />
         <h2 id="introduction">
           Introduction
         </h2>
@@ -29,13 +28,11 @@ const TermsOfUse: FC = () => {
           by the following terms and conditions.
         </p>
 
-        <br />
         <h2 id="acceptance-of-terms">
           Acceptance of Terms
         </h2>
         <p>Your use of our website constitutes your acceptance of these Terms of Service.</p>
 
-        <br />
         <h2 id="user-conduct">
           User Conduct
         </h2>
@@ -44,7 +41,6 @@ const TermsOfUse: FC = () => {
           regulations.
         </p>
 
-        <br />
         <h2 id="copyright-and-intellectual-property">
           Copyright and Intellectual Property
         </h2>
@@ -53,7 +49,6 @@ const TermsOfUse: FC = () => {
           laws. Unauthorized reproduction is prohibited.
         </p>
 
-        <br />
         <h2 id="disclaimers">
           Disclaimers
         </h2>
@@ -62,7 +57,6 @@ const TermsOfUse: FC = () => {
           either express or implied.
         </p>
 
-        <br />
         <h2 id="limitation-of-liability">
           Limitation of Liability
         </h2>
@@ -71,7 +65,6 @@ const TermsOfUse: FC = () => {
           website or any of its content.
         </p>
 
-        <br />
         <h2 id="changes-to-terms">
           Changes to Terms
         </h2>
@@ -80,7 +73,6 @@ const TermsOfUse: FC = () => {
           the Argine.digital website.
         </p>
 
-        <br />
         <h2 id="governing-law">
           Governing Law
         </h2>
@@ -89,7 +81,6 @@ const TermsOfUse: FC = () => {
           California.
         </p>
 
-        <br />
         <h2 id="contact-us">
           Contact Us
         </h2>
