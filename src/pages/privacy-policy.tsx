@@ -5,7 +5,7 @@ const PrivacyPolicy: FC = () => {
     <div style={{ backgroundColor: '#1A1A1A', color: '#ffffff', height: '100vh' }}>
       <section
         className="container"
-        style={{ backgroundColor: '#1A1A1A', color: '#ffffff', height: '100%' }}
+        style={{ backgroundColor: '#1A1A1A', color: '#ffffff', height: '100vh' }}
       >
         <h1 style={{ color: '#ffffff', fontSize: '3rem' }} id="privacy-policy-for-argine-digital">
           Privacy Policy for Argine.digital
