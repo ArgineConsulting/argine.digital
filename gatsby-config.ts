@@ -25,6 +25,23 @@ const config: GatsbyConfig = {
       },
       __key: 'images',
     },
+    {
+      resolve: 'gatsby-plugin-favicons',
+      options: {
+        logo: './src/images/favicon.png',
+        appName: 'argine.digital',
+        background: '#1A1A1A',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          yandex: false,
+          windows: false,
+        },
+      },
+    },
   ],
 }
 

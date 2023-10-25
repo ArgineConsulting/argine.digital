@@ -11,7 +11,7 @@ import danAvatar from '../../../images/newDan.webp'
 
 export const NEWS_TEAM_TEXT_MEDIA = [
   {
-    username: 'Alexander Ronalds',
+    username: 'Alexander<br />Ronalds',
     iconList: [
       {
         alt: 'facebook',
@@ -36,7 +36,7 @@ export const NEWS_TEAM_TEXT_MEDIA = [
     title: 'CEO',
   },
   {
-    username: 'Dan Demchenko',
+    username: 'Dan<br />Demchenko',
     iconList: [
       {
         alt: 'gigster',

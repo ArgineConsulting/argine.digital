@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { NEWS_TEAM_TEXT_MEDIA } from './constants'
+import htmlParse from 'react-html-parser'
 
 const TeamSection: FC = () => (
   <section className="new-team" id="team">
@@ -15,7 +16,7 @@ const TeamSection: FC = () => (
             </div>
 
             <div className="new-team__content">
-              <div className="new-team-name">{user.username}</div>
+              <div className="new-team-name">{htmlParse(user.username)}</div>
               <div className="new-team-descr">
                 <p
                   className="text"

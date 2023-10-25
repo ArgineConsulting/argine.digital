@@ -9,6 +9,8 @@ import VacanciesSection from '../components/Landing/Vacancies'
 import ContactSection from '../components/Landing/Contact'
 import TeamSection from '../components/Landing/Team'
 
+export const Head = () => <title>Argine Digital</title>
+
 const IndexPage: FC = () => {
   return (
     <BaseLayout>
