@@ -4,18 +4,23 @@ export default async function handler(req: Request) {
   try {
     // Retrieve SMTP configuration from environment variables
     const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env
+    console.log(req.text)
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
       throw new Error('SMTP configuration missing in environment variables.')
     }
-    console.log(SMTP_USER)
-    console.log(req.method)
-    console.log(req.body)
 
     // Check request method
     if (req.method !== 'POST') {
       return new Response('Method Not Allowed', { status: 405 })
     }
+
+    // Read and parse the request body
+    const bodyText = await req.text() // Use await to read the entire stream
+    const requestBody = JSON.parse(bodyText) // Assuming the body is in JSON format
+
+    // Extract data from the parsed request body
+    const { email, subject, message } = requestBody
 
     // Create a Nodemailer transporter
     const transporter = createTransport({
@@ -28,9 +33,6 @@ export default async function handler(req: Request) {
         pass: SMTP_PASSWORD,
       },
     })
-
-    // Access the parsed form data
-    const { email, subject, message } = req.body
 
     // Define email configuration
     const mailConfig = {
