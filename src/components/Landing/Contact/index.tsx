@@ -101,10 +101,6 @@ const ContactSection: FC = () => {
                       <option value="Develop or Improve CRM System">
                         Develop or Improve CRM System
                       </option>
-
-                      <option value="Create on enhance a Salesforce instance or another ERP software.">
-                        Create on enhance a Salesforce instance or another ERP software
-                      </option>
                     </select>
                   </label>
                 </div>
