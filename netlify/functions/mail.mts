@@ -3,10 +3,13 @@ import { createTransport } from 'nodemailer'
 export default async function sendEmail(req) {
   // Const
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = Netlify.env.get
+  console.log(SMTP_HOST, SMTP_USER, SMTP_PASSWORD)
+  console.log(req.body)
+  console.log(req.method)
 
   // Check .env vars
   if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
-    return new Response('SMTP configuration missing in environment variables.')
+    throw new Error('SMTP configuration missing in environment variables.')
   }
 
   // Check req method
