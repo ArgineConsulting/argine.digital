@@ -1,14 +1,15 @@
 import React, { FC } from 'react'
+import '../styles/main.sass'
 
 const TermsOfUse: FC = () => {
   return (
-    <div style={{ backgroundColor: '#1A1A1A', color: '#ffffff', height: '100%' }}>
-      <section className="container" style={{ backgroundColor: '#1A1A1A', color: '#ffffff', height: '100%' }}>
-        <h1 style={{ color: '#ffffff', fontSize: '3rem' }} id="terms-of-service-for-argine-digital">
+    <div className="background">
+      <section className="tos container">
+        <h1 id="terms-of-service-for-argine-digital">
           Terms of Service for Argine.digital
         </h1>
 
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="last-updated-october-24-2023">
+        <h2 id="last-updated-october-24-2023">
           Last Updated: October 24, 2023
         </h2>
 
@@ -19,7 +20,7 @@ const TermsOfUse: FC = () => {
         </p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="introduction">
+        <h2 id="introduction">
           Introduction
         </h2>
 
@@ -29,13 +30,13 @@ const TermsOfUse: FC = () => {
         </p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="acceptance-of-terms">
+        <h2 id="acceptance-of-terms">
           Acceptance of Terms
         </h2>
         <p>Your use of our website constitutes your acceptance of these Terms of Service.</p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="user-conduct">
+        <h2 id="user-conduct">
           User Conduct
         </h2>
         <p>
@@ -44,7 +45,7 @@ const TermsOfUse: FC = () => {
         </p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="copyright-and-intellectual-property">
+        <h2 id="copyright-and-intellectual-property">
           Copyright and Intellectual Property
         </h2>
         <p>
@@ -53,7 +54,7 @@ const TermsOfUse: FC = () => {
         </p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="disclaimers">
+        <h2 id="disclaimers">
           Disclaimers
         </h2>
         <p>
@@ -62,7 +63,7 @@ const TermsOfUse: FC = () => {
         </p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="limitation-of-liability">
+        <h2 id="limitation-of-liability">
           Limitation of Liability
         </h2>
         <p>
@@ -71,7 +72,7 @@ const TermsOfUse: FC = () => {
         </p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="changes-to-terms">
+        <h2 id="changes-to-terms">
           Changes to Terms
         </h2>
         <p>
@@ -80,7 +81,7 @@ const TermsOfUse: FC = () => {
         </p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="governing-law">
+        <h2 id="governing-law">
           Governing Law
         </h2>
         <p>
@@ -89,7 +90,7 @@ const TermsOfUse: FC = () => {
         </p>
 
         <br />
-        <h2 style={{ color: '#ffffff', fontSize: '2rem' }} id="contact-us">
+        <h2 id="contact-us">
           Contact Us
         </h2>
         <p>
