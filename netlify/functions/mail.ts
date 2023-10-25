@@ -1,19 +1,23 @@
 import { createTransport } from 'nodemailer'
 
 export default async function handler(req: Request) {
-  // Const
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env
-  console.log(SMTP_HOST, SMTP_USER, SMTP_PASSWORD)
-  console.log(req.body)
-  console.log(req.method)
+  try {
+    // Retrieve SMTP configuration from environment variables
+    const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env
 
-  // Check .env vars
-  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
-    throw new Error('SMTP configuration missing in environment variables.')
-  }
+    if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
+      throw new Error('SMTP configuration missing in environment variables.')
+    }
+    console.log(SMTP_USER)
+    console.log(req.method)
+    console.log(req.body)
 
-  // Check req method
-  if (req.method === 'POST') {
+    // Check request method
+    if (req.method !== 'POST') {
+      return new Response('Method Not Allowed', { status: 405 })
+    }
+
+    // Create a Nodemailer transporter
     const transporter = createTransport({
       service: 'gmail',
       port: Number(SMTP_PORT),
@@ -26,22 +30,23 @@ export default async function handler(req: Request) {
     })
 
     // Access the parsed form data
-    const MAIL_CONFIG = {
-      from: req.body?.email,
+    const { email, subject, message } = req.body
+
+    // Define email configuration
+    const mailConfig = {
+      from: email,
       to: SMTP_USER,
-      subject: req.body?.subject,
-      text: req.body?.message,
+      subject: subject,
+      text: message,
     }
 
-    try {
-      // Try send mail
-      await transporter.sendMail(MAIL_CONFIG)
+    // Try to send the email
+    await transporter.sendMail(mailConfig)
 
-      return new Response('Email sent successfully')
-    } catch (error: any) {
-      return new Response('Error sending email')
-    }
-  } else {
-    return new Response('Method Not POST')
+    // Email sent successfully
+    return new Response('Email sent successfully', { status: 200 })
+  } catch (error) {
+    console.error(error)
+    return new Response('Error sending email', { status: 500 })
   }
 }
