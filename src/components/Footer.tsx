@@ -40,7 +40,7 @@ const Footer = () => (
         <div className="footer__logo">
           <img src={logo} alt="logo" />
         </div>
-        <div className="footer__copy-right">© 2016 Argine Consulting. All Rights Reserved.</div>
+        <div className="footer__copy-right">© 2023 Argine Consulting. All Rights Reserved.</div>
       </div>
       <div className="footer__right">
         <div className="footer__nav">
