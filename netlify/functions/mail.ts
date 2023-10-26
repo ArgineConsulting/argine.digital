@@ -33,12 +33,17 @@ export default async function handler(req: Request) {
       },
     })
 
+    const text = `
+      <p>From: ${email}</p>
+      <p>Goal: ${subject}</p>
+      <p>Message: ${message}</p>
+    `
+
     // Define email configuration
     const mailConfig = {
-      from: email,
       to: SMTP_USER,
-      subject: subject || 'From argine.digital site contact form',
-      text: message,
+      subject: 'From argine.digital site contact form',
+      text,
     }
 
     // Try to send the email

@@ -32,7 +32,7 @@ const VacancyTitle: FC<PropsVacancyTitle> = ({ item }) => {
           <div className="vacancies__descr-left">
             <p className="text">
               {htmlParser(
-                "Join the Argine Digital team and unleash your potential in a high-impact, remote-first environment! We're not just developers; we're innovators in AI, VR/AR/MR, and masterminds in product management. Be a part of groundbreaking projects that redefine businesses and propel them to new heights. Your creativity won't just be welcomed—it'll be celebrated!",
+                "Join the Argine Digital team and unleash your potential in a flexible, cutting-edge environment! We're not just developers; we're innovators in AI, VR/AR/MR, and masterminds in product management. Be a part of groundbreaking projects that redefine businesses and propel them to new heights. Your creativity won't just be welcomed—it'll be celebrated!",
               )}
             </p>
             <h2 className="vacancies__descr__title">JOB BRIEF</h2>

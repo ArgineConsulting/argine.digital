@@ -3,7 +3,7 @@ export const VACANCY = [
     title: 'AI Engineer/Data Scientist',
     number: '01',
     position: 'AI Engineer/Data Scientist',
-    location: 'Remote',
+    location: 'San Francisco',
     jobBrief:
       'Seeking a highly skilled AI Engineer or Data Scientist to develop and deploy advanced machine learning models and AI solutions.',
     responsibilities1: [
@@ -28,7 +28,7 @@ export const VACANCY = [
     number: '02',
     intro: '',
     position: 'Mixed Reality Developer (Unity)',
-    location: 'Remote',
+    location: 'San Francisco',
     jobBrief:
       'We are looking for a talented Mixed Reality Developer to create interactive 3D, AR, and VR experiences using Unity.',
     responsibilities1: ['Develop mixed reality prototypes', 'Handle 3D rendering and animations'],
@@ -40,7 +40,7 @@ export const VACANCY = [
     title: 'DevOps Engineer for AI/Mixed Reality',
     number: '03',
     position: 'DevOps Engineer for AI/Mixed Reality',
-    location: 'Remote',
+    location: 'San Francisco',
     jobBrief:
       'Looking for a specialized DevOps Engineer to set up and maintain high-performance computing infrastructure tailored for AI and mixed reality development.',
     responsibilities1: [
