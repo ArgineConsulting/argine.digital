@@ -42,7 +42,7 @@ export default async function handler(req: Request) {
     // Define email configuration
     const mailConfig = {
       to: SMTP_USER,
-      subject: 'From argine.digital site contact form',
+      subject: 'Argine.digital Contact Form Request',
       text,
     }
 
