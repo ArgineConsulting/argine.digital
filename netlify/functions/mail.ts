@@ -34,9 +34,9 @@ export default async function handler(req: Request) {
     })
 
     const text = `
-      <p>From: ${email}</p>
-      <p>Goal: ${subject}</p>
-      <p>Message: ${message}</p>
+      From: ${email}
+      Goal: ${subject}
+      Message: ${message}
     `
 
     // Define email configuration

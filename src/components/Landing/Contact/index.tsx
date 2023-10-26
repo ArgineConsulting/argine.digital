@@ -4,40 +4,42 @@ import { ArrRight } from '../../Common/icons'
 import { StaticImage } from 'gatsby-plugin-image'
 import contactBcgImg from '../../../images/contact-img.webp'
 import axios from 'axios'
+import { CircleLoader } from 'react-spinners'
 
 const ContactSection: FC = () => {
-  // Local state
   const [isSent, setIsSent] = useState<boolean>(false)
-  const [goal, setGoal] = useState<string>('Select an industry')
+  const [isWaiting, setIsWaiting] = useState<boolean>(false)
+  const [goal, setGoal] = useState<string>('Choose Your Objective')
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
 
   const submitHandler = async (event: SyntheticEvent) => {
     event.preventDefault()
-    const SELECTOR_VALUE = goal
-    const MAIL_VALUE = email
-    const MESSAGE_VALUE = message
-
-    // Prepare the data to send
-    const formData = {
-      subject: SELECTOR_VALUE,
-      email: MAIL_VALUE,
-      message: MESSAGE_VALUE,
-    }
 
     try {
+      setIsWaiting(true)
+
+      const formData = {
+        subject: goal,
+        email,
+        message,
+      }
+
       const response = await axios.post('/.netlify/functions/mail', formData, {
         headers: { 'Content-Type': 'application/json' },
       })
 
+      setIsWaiting(false)
+
       if (response.status === 200) {
-        // Handle success, e.g., show a success message
         setIsSent(true)
       } else {
-        throw Error('Message not sent, try again later')
+        throw new Error(
+          'Message not sent, please reload the page and try again, or try again later',
+        )
       }
     } catch (error) {
-      throw Error('Message not sent' + error)
+      console.error('Message not sent', error)
     }
   }
 
@@ -72,10 +74,14 @@ const ContactSection: FC = () => {
                 placeholder="blurred"
               />
             </>
+          ) : isWaiting ? (
+            <div className="loader">
+              <CircleLoader size="150" />
+            </div>
           ) : (
             <div className="send">
               <h5 className="text">What are your business goals?</h5>
-              <form className="contact__form" onSubmit={(e: any) => submitHandler(e)}>
+              <form className="contact__form" onSubmit={submitHandler}>
                 <div className="contact__form-field">
                   <label htmlFor="value">
                     <select
@@ -84,20 +90,15 @@ const ContactSection: FC = () => {
                       value={goal}
                       onChange={e => setGoal(e.target.value)}
                     >
-                      <option value="Choose Your Objective" hidden>
+                      <option value="Choose Your Objective" disabled>
                         Choose Your Objective
                       </option>
-
                       <option value="Boost Revenue">Boost Revenue</option>
-
                       <option value="Improve Strategic Direction">
                         Improve Strategic Direction
                       </option>
-
                       <option value="Perform User Research">Perform User Research</option>
-
                       <option value="Co-develop Custom Software">Co-develop Custom Software</option>
-
                       <option value="Develop or Improve CRM System">
                         Develop or Improve CRM System
                       </option>
@@ -139,4 +140,5 @@ const ContactSection: FC = () => {
     </section>
   )
 }
+
 export default ContactSection
