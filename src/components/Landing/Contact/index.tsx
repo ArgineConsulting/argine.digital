@@ -12,6 +12,7 @@ const ContactSection: FC = () => {
   const [goal, setGoal] = useState<string>('Choose Your Objective')
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
+  const [errorMessage, setErrorMessage] = useState<string>('')
 
   const submitHandler = async (event: SyntheticEvent) => {
     event.preventDefault()
@@ -34,12 +35,16 @@ const ContactSection: FC = () => {
       if (response.status === 200) {
         setIsSent(true)
       } else {
+        setErrorMessage(
+          'Message not sent, please reload the page and try again, or try again later',
+        )
         throw new Error(
           'Message not sent, please reload the page and try again, or try again later',
         )
       }
     } catch (error) {
       console.error('Message not sent', error)
+      setErrorMessage('Message not sent, please reload the page and try again, or try again later')
     }
   }
 
@@ -78,6 +83,8 @@ const ContactSection: FC = () => {
             <div className="loader">
               <CircleLoader size="150" />
             </div>
+          ) : errorMessage ? (
+            <h5 className="text">{errorMessage}</h5>
           ) : (
             <div className="send">
               <h5 className="text">What are your business goals?</h5>
