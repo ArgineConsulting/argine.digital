@@ -1,15 +1,15 @@
-import React, { FC, SyntheticEvent, useState } from 'react'
-import { Parallax } from 'react-scroll-parallax'
-import { ArrRight } from '../../Common/icons'
-import { StaticImage } from 'gatsby-plugin-image'
-import contactBcgImg from '../../../images/contact-img.webp'
 import axios from 'axios'
+import { StaticImage } from 'gatsby-plugin-image'
+import React, { SyntheticEvent, useState } from 'react'
+import { Parallax } from 'react-scroll-parallax'
 import { CircleLoader } from 'react-spinners'
+import contactBcgImg from '../../../images/contact-img.webp'
+import { ArrRight } from '../../Common/icons'
 
-const ContactSection: FC = () => {
+const ContactSection: React.FC = () => {
   const [isSent, setIsSent] = useState<boolean>(false)
   const [isWaiting, setIsWaiting] = useState<boolean>(false)
-  const [goal, setGoal] = useState<string>('Choose Your Objective')
+  const [goal, setGoal] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
   const [errorMessage, setErrorMessage] = useState<string>('')
@@ -81,37 +81,26 @@ const ContactSection: FC = () => {
             </>
           ) : isWaiting ? (
             <div className="loader">
-              <CircleLoader size="150" />
+              <CircleLoader size={150} />
             </div>
           ) : errorMessage ? (
             <h5 className="text">{errorMessage}</h5>
           ) : (
             <div className="send">
               <h5 className="text">What are your business goals?</h5>
-              <form className="contact__form" onSubmit={submitHandler}>
+              <form className="contact__form" id="contact-form" onSubmit={submitHandler}>
                 <div className="contact__form-field">
-                  <label htmlFor="value">
-                    <select
-                      id="value"
-                      name="value"
-                      value={goal}
-                      onChange={e => setGoal(e.target.value)}
-                    >
-                      <option value="Choose Your Objective" disabled>
-                        Choose Your Objective
-                      </option>
-                      <option value="Boost Revenue">Boost Revenue</option>
-                      <option value="Improve Strategic Direction">
-                        Improve Strategic Direction
-                      </option>
-                      <option value="Perform User Research">Perform User Research</option>
-                      <option value="Co-develop Custom Software">Co-develop Custom Software</option>
-                      <option value="Develop or Improve CRM System">
-                        Develop or Improve CRM System
-                      </option>
-                    </select>
-                  </label>
+                  <input
+                    className="contact__form-goal"
+                    placeholder="Goal"
+                    value={goal}
+                    onChange={e => setGoal(e.target.value)}
+                    type="text"
+                    name="goal"
+                    required
+                  />
                 </div>
+
                 <div className="contact__form-field">
                   <input
                     className="contact__form-email"
@@ -123,6 +112,7 @@ const ContactSection: FC = () => {
                     required
                   />
                 </div>
+
                 <div className="contact__form-field is-textarea">
                   <textarea
                     className="contact__form-textarea"
@@ -133,9 +123,9 @@ const ContactSection: FC = () => {
                     cols={30}
                     rows={10}
                     required
-                  ></textarea>
+                  />
                 </div>
-                <button type="submit">
+                <button type="submit" form="contact-form">
                   Send message
                   <ArrRight />
                 </button>

@@ -1,19 +1,32 @@
-import React, { FC } from 'react'
-import '../styles/main.sass'
-import BaseLayout from '../components/Layout'
-import IntroductionSection from '../components/Landing/Introduction'
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import AboutSection from '../components/Landing/About'
-import ProcessSection from '../components/Landing/Process'
 import AboutUsSection from '../components/Landing/AboutUs'
-import VacanciesSection from '../components/Landing/Vacancies'
 import ContactSection from '../components/Landing/Contact'
+import IntroductionSection from '../components/Landing/Introduction'
+import ProcessSection from '../components/Landing/Process'
 import TeamSection from '../components/Landing/Team'
+import VacanciesSection from '../components/Landing/Vacancies'
+import BaseLayout from '../components/Layout'
+import '../styles/main.sass'
 
-export const Head = () => <title>Argine Digital</title>
-
-const IndexPage: FC = () => {
+const IndexPage: React.FC = () => {
   return (
     <BaseLayout>
+      <Helmet>
+        {/* Google Tag Manager START */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLJFLLQQ8D"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BLJFLLQQ8D');
+          `}
+        </script>
+        {/* Google Tag Manager END */}
+      </Helmet>
+
       <IntroductionSection />
       <AboutSection />
       <ProcessSection />

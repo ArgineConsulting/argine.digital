@@ -1,5 +1,5 @@
-import React from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import React from 'react'
 import logo from '../images/logo.svg'
 // import { IconArrow } from './Common/icons'
 
@@ -33,14 +33,14 @@ const NavLink = ({ path, name }) => (
   </button>
 )
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <footer className="footer">
     <div className="container">
       <div className="footer__left">
         <div className="footer__logo">
           <img src={logo} alt="logo" />
         </div>
-        <div className="footer__copy-right">© 2023 Argine Consulting. All Rights Reserved.</div>
+        <div className="footer__copy-right">© 2024 Argine Consulting. All Rights Reserved.</div>
       </div>
       <div className="footer__right">
         <div className="footer__nav">
