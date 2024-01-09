@@ -1,9 +1,9 @@
 {
-  "name": "argine.digital",
+  "name": "argine-digital",
   "version": "1.0.0",
   "private": true,
   "description": "argine consulting project",
-  "author": "abbze & Yakow",
+  "author": "abbZe & Yakow",
   "keywords": [
     "gatsby",
     "argine"

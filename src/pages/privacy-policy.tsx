@@ -1,9 +1,9 @@
-import React, { FC, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import '../styles/main.sass'
 
 export const Head = () => <title>Argine Digital / Privacy policy</title>
 
-const PrivacyPolicy: FC = () => {
+const PrivacyPolicy: React.FC = () => {
   useEffect(() => {
     // Добавить класс к body при монтировании компонента
     document.body.classList.add('black-bg')

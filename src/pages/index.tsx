@@ -14,6 +14,10 @@ const IndexPage: React.FC = () => {
   return (
     <BaseLayout>
       <Helmet>
+        {/* Site Title START */}
+        <title>Argine Digital</title>
+        {/* Site Title END */}
+
         {/* Google Tag Manager START */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLJFLLQQ8D"></script>
         <script>
