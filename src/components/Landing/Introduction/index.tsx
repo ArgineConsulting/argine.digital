@@ -1,5 +1,5 @@
 import { AdvancedVideo } from '@cloudinary/react'
-import { auto, autoBest } from '@cloudinary/transformation-builder-sdk/qualifiers/quality'
+import { autoBest } from '@cloudinary/transformation-builder-sdk/qualifiers/quality'
 import { CloudinaryVideo } from '@cloudinary/url-gen'
 import { quality } from '@cloudinary/url-gen/actions/delivery'
 import { scale } from '@cloudinary/url-gen/actions/resize'
@@ -17,12 +17,12 @@ const IntroductionSection: React.FC = () => {
     .resize(scale().width(1920))
     //.adjust(brightness(-10))
     .quality(autoBest())
-    .delivery(quality(auto()))
+    .delivery(quality(autoBest()))
   const videoMobileEdited = videoMobileInstanse
-    .resize(scale().width(1100))
+    .resize(scale().width(1180))
     //.adjust(brightness(-10))
     .quality(autoBest())
-    .delivery(quality(auto()))
+    .delivery(quality(autoBest()))
 
   return (
     <div>
@@ -33,7 +33,7 @@ const IntroductionSection: React.FC = () => {
 
         <div className="introduction__animation">
           <AdvancedVideo
-            style={{ overflow: 'hidden' }}
+            className="introduction__video"
             cldVid={isMobile ? videoMobileEdited : videoDesktopEdited}
             cldPoster="auto"
             autoPlay

@@ -1,22 +1,19 @@
 .introduction
     position: relative
     background: #000
-    max-width: 100%
-    overflow: hidden
+    height: 100vh
+    width: 100vw
+    overflow-x: hidden
     background-color: black
     background-size: cover
-    background-position: 25% 0
+    background-position: center center
     background-repeat: no-repeat
-    +mobile
 
     .container
-        height: 100%
         display: flex
         flex-direction: column
         min-height: 100vh
-        justify-content: flex-end
-        padding-bottom: 24rem
-        position: relative
+        justify-content: center
         z-index: 1
         +mobile
             justify-content: flex-end
@@ -24,19 +21,28 @@
         h1
             color: $white
             max-width: 740px
+            z-index: 10
             +mobile
                 font-size: 42px
                 line-height: 60px
     &__animation
         position: absolute
-        left: 0
-        top: 0
+        display: flex
+        justify-content: flex-end
+        width: 100vw
+        height: 100vh
         bottom: 0
-        width: 100%
-        overflow: hidden
+        left: 0
+        overflow-x: hidden
         +mobile
-            left: -175px
-            width: 159%
+    &__video
+        width: 100vw
+        height: 100vh
+        +mobile
+            width: auto
+            height: auto
+
+
 .about
     .container
         padding-top: 192px

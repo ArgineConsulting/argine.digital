@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import React, { useState } from 'react'
 import logo from '../images/logo.svg'
 import { IconClose } from './Common/icons'
 
@@ -38,13 +38,13 @@ const NavLink = ({ path, name, onClick }) => (
   </button>
 )
 
-const Header = () => {
+const Header: React.FC = () => {
   const [navBarActiveClass, setNavBarActiveClass] = useState('')
 
   return (
     <header className="header">
       <div className="header__logo">
-        <img src={logo} alt="logo" />
+        <img width={171} height={36} src={logo} alt="logo" />
       </div>
       <nav className={`navbar ${navBarActiveClass}`} role="navigation" aria-label="main-navigation">
         <div
