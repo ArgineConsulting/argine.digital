@@ -1,4 +1,4 @@
-import { AdvancedVideo, lazyload, responsive } from '@cloudinary/react'
+import { AdvancedVideo, lazyload } from '@cloudinary/react'
 import { autoBest } from '@cloudinary/transformation-builder-sdk/qualifiers/quality'
 import { CloudinaryVideo } from '@cloudinary/url-gen'
 import { quality } from '@cloudinary/url-gen/actions/delivery'
@@ -35,7 +35,7 @@ const IntroductionSection: React.FC = () => {
           <AdvancedVideo
             className="introduction__video"
             cldVid={isMobile ? videoMobileEdited : videoDesktopEdited}
-            plugins={[lazyload(), responsive()]}
+            plugins={[lazyload()]}
             cldPoster="auto"
             autoPlay
             loop
