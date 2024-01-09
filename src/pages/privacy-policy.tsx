@@ -63,8 +63,7 @@ const PrivacyPolicy: React.FC = () => {
         </p>
         <h2 id="contact-us">Contact Us</h2>
         <p>
-          For any questions or concerns regarding this Privacy Policy, please contact us at
-          info@argineconsulting.com.
+          For any questions or concerns regarding this Privacy Policy, please contact us at company@argine.digital
         </p>
       </section>
     </div>
