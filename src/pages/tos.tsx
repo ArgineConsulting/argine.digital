@@ -75,8 +75,7 @@ const TermsOfUse: FC = () => {
 
         <h2 id="contact-us">Contact Us</h2>
         <p>
-          For questions or concerns about these Terms, please contact us at
-          info@argineconsulting.com.
+          For questions or concerns about these Terms, please contact us at company@argine.digital
         </p>
       </section>
     </div>
