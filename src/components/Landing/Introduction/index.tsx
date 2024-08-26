@@ -34,10 +34,10 @@ const IntroductionSection: React.FC = () => {
                         cldVid={isMobile ? videoMobileEdited : videoDesktopEdited}
                         // plugins={[lazyload()]}
                         cldPoster="auto"
-                        autoPlay={true}
-                        playsInline={true}
-                        loop={true}
-                        muted={true}
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
                         preload="auto"
                     />
                 </div>
